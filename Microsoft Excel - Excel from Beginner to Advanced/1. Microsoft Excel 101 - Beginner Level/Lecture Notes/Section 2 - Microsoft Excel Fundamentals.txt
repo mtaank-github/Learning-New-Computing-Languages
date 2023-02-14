@@ -1,0 +1,53 @@
+Section 2 Notes:
+
+Lecture 4: Launching Excel
+-Can search it in the search bar, or open it through the desktop by double clicking.
+
+Lecture 5: Microsoft Excel Startup Screen
+-Were are going to start with a blank workbook.
+-beside this are tutorials (tours).
+-then below are recent templates and documents.
+
+Lecture 6: Introduction to Excel Interface
+-We opened a blank workbook.
+-top of screen we see the quick access tool bar (green bar at top).
+-We have pre-added quick access tools like autosave, save, undo, redo.
+-below the green bar, is the "ribbon" where you see the the tabs like File, Home, Insert, ...
+-Ribbon is common with all Microsoft programs like Word and PPT, but they will be a bit different.
+-Some tabs will not be there, but need to be added manually.
+-Below ribbon is the "Name bar and Formula bar" where you see box says A1, then box that shows X, checkmark and fx.
+-click on view tab, the select/deselect formula bar, to remove it/add it to the workbook screen.
+-you can minimize the ribbon by double clicking on any tab. Can bring it back by double clicking.
+
+Lecture 7: Customizing the Excel Quick Access Toolbar
+-Click the down arrow on this green bar to add some more stuff to the quick access tool bar, like "New file, quick print, spelling, etc."
+-can add formulas to quick access toolbar. go to formulas, rightclick on autosum, then click add to quick access tool bar.
+
+Lecture 8: More on Excel Interface
+-Bottom of the screen is the status bar. You can change the zoom, and change the view of the workbook.
+-you can also change the view of workbook in the view tab in the ribbon.
+-rightclick on the status bar to add/remove tabs.
+-I want to work in a new excel workbook, notice that everything including the quick access tool bar, ribbon and status bar are the excel interface, but the actual workbook is the spreadsheet part.
+
+Lecture 9: Understanding the Structure of an Excel Workbook
+-The workbook is the main excel file.
+-I am looking at the workbook, but i am actually looking at a "worksheet".
+-You can add as many worksheets as you want in the workbook.
+-just above the status bar you see "Sheet1", you can add sheets by clicking the plus sign.
+-rightclick on the sheet to rename it.
+-within the sheets, we have the grid, that is made up of columns (letters) and rows (numbers).
+-Each box in the grid is called a "Cell" and labelled as ColumnRow: for example the top left cell is called "A1" cell.
+-you can keep up to 255 worksheets in a workbook in prior versions. Later versions you can have as many as you want but it depends on your computer's memory!
+
+Lecture 10: Saving an Excel Document
+-Save regularly. 
+-Click "File" tab, then click "Save As" choose a location to save and name the file.
+-Notice that the "File Type" is "Excel Workbook, which is .xlsx extension.
+-there are other types but for now leave this.
+
+Lecture 11: Opening an Existing Excel Document
+-Click File tab, then click "Open" and you will see your recent workbooks, or you can browse on your computer.
+
+Lecture 12: Common Excel Shortcut Keys
+-see a bunch of keyboard shortcuts in excel in the provided file (See resources).
+
