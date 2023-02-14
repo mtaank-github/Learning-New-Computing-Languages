@@ -1,0 +1,37 @@
+Section 16 Notes:
+
+Learning about why Validation of data is important and how to validate your data. Note, we are using the worksheet titled: "Sort and Filter" now.
+
+Lecture 85: Understanding the Need for Excel Data Validation
+-With no data validation, there can be errors in the list, even something small like a typo. Sometimes there will be formatting differences, etc. 
+-Users are going to be working with this list, and we want to make sure we impose some conditions, for example, we dont want the rate to be outside of a certain range. If the car is automatic, we want only yes or no, nothing else. For example, the car makes, we only have certain makes, so we dont want different ones.
+
+Lecture 86: Creating an Excel Data Validation List
+-Lets create a drop down list. In the "Make" column, we want to provide the users these options, not let them manually enter it. 
+-Well click into B4, and select up to B30. This is the range we want to set up validation. Then go to "data" tab and see the "Data Tools" section, there is a button "Data Validation". 
+-We can change the entry for "Allow" because we only want certain values. Click "List" then we type the elements we want them to choose from. Well type out the different makes that we have and click ok.
+-Notice that when you click on any cell in the range, you cannot type in these cells. It gives an error. There is a dropdown menu that gives the options. 
+
+Lecture 87: Excel Decimal Data Validation
+-Another type of validation is a numeric one. We want to restict the entry to be between a certain range of numbers.
+-Now lets select the cells I4 to I30, same range as last time and now we are in the "Rate" Column. In the "Allow" now, we will select "Decimal", since rates will have decimals.
+-It prompts you to choose the range by writing in the minimum and maximum values. Here lets say min=14.95 and max=39.95.
+-Now when click onto any cell in this range, you will not get a dropdown like last time, you can type any value you want and will get an error if you are out of the range.
+
+Lecture 88: Adding a Custom Excel Data Validation Error
+-Weve seen a list, and now we seen a decimal range validation. Now we want to improve this. We see that we get a error message when we enter a value that does not meet the validation requirements.
+-Issue is it doesnt really tell you what you did wrong. We want to be able to edit the error message to make it more clear what was wrong.
+-Lets do this for the "Make". Select the same cells. Now instead of the "Settings" tab, well go to the "Error Alert" tab. We can make a custom error message here.
+-In the "Style" drop down, we see 3 options. This is the symbol that appears in the message. The default is a "STOP" style and shows a red "X". The "Warning" style shows a yellow sign with an !. Then there is "Information" which is a blue circle with a "i" in it.
+-We can fill in the rest of the information here, give a title of the error and give a message to go with it.
+-Lets try with the Warning style. Notice you get the error message, but it still allows you to put the invalid value into the cell. We do not want this, so it is better to use a Stop style, to restrict putting different entries. If we set it to information style, it just lets you keep the bad entry by clicking Ok. 
+-We use a stop style to make sure we only get the entry we want, which the certain makes that we listed 2 lectures ago.
+
+Lecture 89: Dynamic Formulas by Using Excel Data Validation Techniques
+-We have now seen the decimal range, drop down menu and error messages. We can combine the data validation list (drop down menu) with a function.
+-Recall the worksheet titled: "List Functions". When we used the database functions, we had to manually make the criteria section. But we did this on our own, so we couldve made some mistakes. If we do make a mistake, we see we just get a math error but thats it. We do not know where we made the error without seeing it manually.
+-We want to make the criteria section more interactive for users by giving them a dropdown menu. 
+-In the criteria section, lets now make a list, for a user to pick from, but instead of typing out the list, we will reference a range of cells that contain the list. 
+-To the right just an empty area, lets write out the list ourselves, so in N2 down, write out the different categories (we wont use all of them). 
+-Now go to data validation and in the Source, we can select the cells we just made. 
+-See in the little table we made with the categories where we used the database functions, see the cell where we want a category has a dropdown menu with the list we just referenced.

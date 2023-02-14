@@ -1,0 +1,78 @@
+Section 18 Notes:
+
+Look at using one of the more powerful tools in Excel: Pivot Tables.
+
+Lecture 97: Understanding Excel PivotTables
+-We are looking at the Excel102Exercises workbook and the "Sales Data" Worksheet
+-We are going to make a PivotTable, which is a summary of the long list of records. We set one header as the row labels and another header as the column label, then the entries of the PivotTable are from the header we want to look at. For example, Row labels are the months, column labels are the categories and the entries are the sales.
+
+Lecture 98: Creating an Excel PivotTable
+-Before making the PivotTable, lets format it as a table. We can name the table as well under "table design". Now when we make the pivottable we can use that name and if records are changed, the PivotTable still knows it referring to this table.
+-To create the PivotTable, we go to "Insert" tab and on the left the section "Tables". Click the button "PivotTable".
+-Select the range of data (the table name here). Next we tell it where to put the PivotTable. Note we can use PowerPivot tools with this but will see this later on.
+-Well put it in the new worksheet. 
+-3 important elements, the beginning of PivotTable options in the cells, on the right well see "PivotTable Fields", then in the ribbon we see two new tabs "PivotTable Analyze" and "Design".
+
+Lecture 99: Modifying Excel PivotTable Calculations
+-We just made the PivotTable in a new worksheet.Reminder that our PivotTable is linked to our table from the worksheet "SalesData".
+-In the PivotTable, we can look in the "Field List" on the right and notice all of the headers from the table. We can drag the headers we want to look at into the fields of rows, columns, filters and values.
+-In our case, well drag "Months" to the row section. Notice the table is starting to take shape in the spreadsheet.
+-We want to look at Sales per month, we can drag the sales data into the "Values" field. If we stop here, we have a summary of all sales per month. 
+-Now what if we want to see sales per month for each item, we can drag the Type data into the "Column" field. and see the table is now made.
+-Really easy to make. Also, it is easy to edit the table. For example, now we want to see how much of each type of item that each salesperson sold. We can drag out the month data and drag in the saleperson data.
+
+Lecture 100: Grouping PivotTable Data
+-We left with a table with salespeople and types with sales in the value section. Lets put back month in the rows section. We can look at grouping now.
+-Lets say now we want to group the months by quarters. Highlight the group you want to make. So well highlight Jan, Feb, March.
+-In the "PivotTable Analyze" tab, click the "Group Selection" button in the "Group" section. Notice it also groups the other rows we did not highlight. we will fix that. To make a new group, highlight the group then click group selection.
+-You can rename the group titles as well.
+-We can collapse the groups as well and get more condensed data results. 
+Notice when we made these groups, in the Fields area on the right, in the Rows field, there is a new thing in there titled "Month2". This is to represent the groups. If we drag it out of the field, notice the pivot table will go back to listing all the months (ungroups it).
+-Another method for making groups.
+-Lets now switch month and group by Region. So well replace Month with Region in the "Rows" field. Next well drag "Saleperson" into the Rows field as well, but BELOW the region. Notice we have now made a group of each region and within each region, we see the salespeople.
+-We have now groups based on existing fields. 
+-In the example we just made, we see for each region, who are the salespeople in each region and how many sales are they making for each item.
+-If we now swtich the order, i.e., saleperson above region, we see that the group is for each person and in each group we see their region. 
+
+Lecture 101: Formatting PivotTable Data
+-Specifically we care about formatting the numbers. We are viewing sales data, so we want to see currency formatting. We could just highlight the cell and click the formatting, it works but it only formats the specific cells. 
+-Lets make the PivotTable now with Months in the rows and Type in the Columns. In the Fields area, go to the Values field, click the drop down arrow and click on "Values Field Setting". We can change the operation used to summarize, for example, change sum to average etc. but we dont want that.
+-Below that, click on "Number Format". Select the formatting for what we want, so currency, then click ok. We have now properly formatted our data values.
+
+Lecture 102: Modifying PivotTable Calculations
+-Modify the calculations of the Value Field. By default, Excel sets this to sum up the data and returns the sums. We can change this to an average or min/max or whatever.
+-Excel also has another default. If we remove Sales in the Value section and replace with Salesperson (not a numeric value, but a text value). It defaults it to a Count operation. Obviously we can sum up text values., so it defaults to Count.
+-Lets remove type for now and we can see the sales per month. Lets say we want to see the sum of sales and Average of sales. We can drag Sales to Values section again (its there twice so it names it Sales2). We can click the dropdown menu on Sales2 in the Value field and change the operation to Average. 
+-Now lets look at sales again, but now we want to know did we increase or decrease sales month over month? From Jan to Feb, did we go up/down in sales, etc.
+-Drag Sales again into the Values section. Now our two PivotTable columns are sums. We can change Sum of Sales2 and go to value field settings. We select sum, but now in the second tab called "Show Values As". The drop down where it says "No Calculation", click this and select what you want to see. In our case, we will select "% difference from" to see the percent change from each month. 
+In "Base Field" we select "Month", then in "Base Item" we select the PREVIOUS month, since we want to compare to the previous month sales.
+-Click ok and observe the table.
+
+Lecture 103: Drilling Down into PivotTable Data
+-Lets say we are looking at the table we just made and someone says "I want to look at April because somehow we increase 50%. How did we do that"
+-We want to look at all the April data then. We could go back to the old list and filter the list and sort it to see the April data.
+-Instead we can use the "Drill Down" feature of the PivotTable. If we click on the percent value or sum value in the April row, we double click this cell, it makes a new worksheet with only the April data. 
+-We make a nice worksheet with just the data we wanted to look at. Very easy.
+-We can similarly do this for each salesperson. Say we wanted to send each salesperson. We can create a PivotTable, group by salesperson, then double click the data for them. We just made a new worksheet with data for each salesperson individually. Very useful Drilling down.
+
+Lecture 104: Creating PivotCharts
+-Now, we want to take our PivotTable data, and display it as a chart. The only difference is that our charts are made from data from the PivotTable.
+-In the "PivotTable Analyze" tab, there is a section called "Tools" and we can see the button called "PivotChart".
+-Click this and we see a similar chart window we saw earlier. We can select any chart we want and make the chart. 
+-We can format the chart with titles, legends, etc.
+-Notice that we still have the sales data sum and the percents for month on month increase/decrease. In the chart it is still plotting that, but percents are so small you cant even see them. In the "Fields" section, if we drag "Monthly Percentage: out, the chart and PivotTable update accordingly.
+-We can format the chart exactly same as any other type of chart, like legend, axis titles, etc.
+
+Lecture 105: Filtering PivotTable Data
+-2 types of filtering methods. NOTE we have the PivotChart still there. If we filter the PivotTable, this will also affect the PivotChart.
+-Lets look at each month and sales for each month. Well there is data for 3 years. 
+-Lets drag "Year" into the field "Filters". In the top of the spreadsheet, we see a drop down were we can select which year we want to see. We can also select multiple years at once for comparison.
+-We could also filter by any other headers.
+
+Lecture 106: Filtering with the Slicer Tool
+-Another way of filtering is the Slicer Tool, or Slicers.
+-First, well remove the Year from the filter field.
+-Click into the PivotTable and go to "PivotTable analyze" tab and click in the Filter section, "Insert Slicer". 
+-In this window, we can choose how we want to filter the data. Well select Year and click ok. We now have a nice Slicer window and we can move it around and select each year. 
+-Its really a nice interface for filtering the PivotTable.
+-We can also have multiple Slicers for super filters. Lets add one for region. We can see a certain year and a certain region. 

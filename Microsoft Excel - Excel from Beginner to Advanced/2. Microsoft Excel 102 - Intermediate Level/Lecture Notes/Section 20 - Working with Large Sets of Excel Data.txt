@@ -1,0 +1,39 @@
+Section 20 Notes:
+
+Working with very large sets of Data. Features to make life easier working with larger sets.
+
+Lecture 114: Using the Freeze Panes Tool
+-We are in the worksheet: "Employee Records". 
+-We have a list with column headers. Problem is Column headers are at the top of the list, but if you scroll down, youll forget what each column is. Hard to remember what each column is. We can use a freeze pane to freeze the column headers.
+-Lets click into cell A2. When we freeze pane, it freezes everything above it.
+-In the ribbon, go to "View" tab, then section called "Window" and button called "Freeze Panes". Notice that row 1 is always there when we scroll.
+
+Lecture 115: Grouping Data (Columns and/or Rows)
+-Lets go back to the worksheet: "List Functions". Recall we looked at the subtotal function here.
+-Lets say I want to get a subtotal for the total sales in the East Division, and same for each division. 
+-There is an extra feature with the subtotal feature called: "Group and Outline", which allows you collapse and expand your subtotals. We can create custom groupings now.
+-We have many months of data, but we dont need to see these months all the time, so lets hide them when we dont want to see them. We could use the hide tool, but it is a manual process. 
+-Lets say we want to temporarily hide January. Select column C, go to Data tab and the section "outline" then click "Group". We have now created a group for January. If we click the Minus sign, we can hide Jan. To unhide it, click the Plus. 
+-Now if we want to hide Jan and Feb, Highlight the columns and group them the same way. Now we have two levels of grouping. 
+
+Lecture 116: Print Options for Large Sets of Data
+-Some problems occur when you want to print large data sets. How to make it look presentable, etc.
+-Working in the sheet: "Sales Data" now.
+-Before we go to print this, lets adjust this by adjusting the column widths. Lets see how it looks if we were to print right now. I have lots of pages. On the first page, see some columns are cut off. On page 2, we see the next few rows, but not the next extra columns (to the right). Also, we dont see the headers on the next pages.
+-We want the headers always there, and we should see the continuation of page 1 records before getting into a new set of records.
+-Lets go back. First, lets get the column headers to repeat. Go to "Page Layout" and "Page Setup" section. There is a button for "Print Titles". Click this. Go to sheet tab, and we see "Rows to repeat at top". We select the row we want and in print preview, we see the headers are always there.
+-Now we address the issue of the one column being cut off. We see right now, the extra column is on the last page. We need to change the order this is printed. 
+-Lets go to View tab and go to "Page Break Preview". Notice that Page 1 content bleeds out on the right. We are currently printing from top to down, then back to top and down. But we want instead to print from left to right, then down.
+-Go page layout tab and go to Print titles again. In the Sheet tab, we see "Page Order". We want it to go over, then down, so select this. OK. Now look at the preview.
+
+Lecture 117: Linking Worksheets (3D Formulas)
+-We are now in the worksheet: "SUMMARY".
+-This is a small table. Notice the circulation column is empty. The data for this column come from the other sheets called: "2013", "2014", "2015".
+-We want to summarize the data from these 3 sheets into this new sheet. We will use a technique called a "3D formula".
+-We are on the summary sheet. Go to B4 and create a formula. type "=" and click over to the 2013 sheet, notice the formula bar now looks like: "='2013'!B4". Now we want to sum this to the corresponding value in 2014 and 2015. In the formula bar we now see: "='2013'!B4+'2014'!B4+'2015'!B4".
+
+Lecture 118: Consolidating Data from Multiple Worksheets
+-We saw how to use a 3D formula across worksheets (you can also do this acroess workbooks!). Now lets look at a more automated approach to get Excel to do some of the work for us.
+-We can use the Consolidating feature now. We need to do some housekeeping first. With this new feature, we do not need the town names. The feature will identify the towns for us.
+-In the summary sheet, we deleted the table entries. Click on the upper left cell in the table (not header), In the Data tab, go to Data tools sections and click "Consolidate". We get a window and we need to fill in the function (sum for us), then the reference. In the reference box, we go to 2013 sheet and select the whole table (not the headers), then click "Add". Do this again for 2014 and 2015. Notice in the "All reference" box we see all the data.
+-Now we have 3 check boxes below in the window. We want to click "Left Column" as the labels so the consolidation feature knows to keep Beverly with "Beverly from each sheet. Now click ok.

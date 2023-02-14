@@ -1,0 +1,79 @@
+Section 14 Notes:
+
+Note that from now, we will be using the files attached in the resources. The spreadsheet is called Excel102Excel.xslx and there are other files containing data which we will use later on.
+
+Want to now start looking at data in lists
+
+Lecture 69: Understanding Excel List Structures 
+-We are using the provided excel spreadsheet titles: "Employee Records". We have a list of Employees and their information.
+-Important concept of lists is that they need headers.
+-Note that the first row has titles so we know what each column represents. For example, Column A is Employee ID. Another reason we want the column headers is that Excel wants the headers. It looks for headers itself.
+-The headers are quite important because for example, if we want to sort based on a condition, like sort by last name, excel knows "oh theres the last names I can do that".
+-Important concept of a list, make sure there is no EMPTY cells in any row or column.
+-If there is an empty row, Excel sees this empty row as a separation between two lists. The bottom part below the empty row is considered its own list because it is non-contiguous with the upper part of the empty row.
+
+Lecture 70: Sorting a List using Single Level Sort
+-What is the purpose of a list? To store data. We store the data so we can find it later on. We want to work with the data. The most effective way to do this is to sort the list to make it easier to find certain records.
+-For example, sort by name, ID, Department, Location, etc. (These are the headers in the same excel sheet "Employee Records).
+-First method is to do a quick sort (single level). Click on the column you want to sort, Example want to sort by last name so click on any cell in that column, Then click on the "Data" tab, in the section "Sort and Filter". Here there are two buttons that allow you to sort ascending and descending order. Buttons look like A over a Z with an arrow.
+-Can do this for any column and sort alphabetically.
+
+Lecture 71: Sorting a List using Multi-Level Sorts
+-Now we want to look at multi-level sort. We want to sort by multiple columns.
+-Suppose now we want to sort by last name AND by First name. So 2 levels.
+-First click into the list (doesnt matter what column just be in the list). Go to Data tab and Sort and Filter section. Click on the big "Sort" button. 
+-We see that we can sort by what we want and select the order (ascending/descneding). To do a multi-level sort, click on "Add Level" for a secondary sort. Click this and choose the second column you want to sort by. Notice the list changes accordingly.
+-In our case well sort Last name first, then secondary sort is First name. The first name column may not look sorted but it is. Notice if 2 people have the same last name, theyre first names will be sorted accordingly. It prioritized last names since that is our primary sorting.
+-Note you could sort up to 64 Levels. 
+
+Lecture 72: Using Column Sorts in an Excel List
+-One more topic about sorting. NOTE: we are now on a new worksheet TITLED: "Buyers 2015"
+-We have another list pretty simple list. Note, in the first column we have months (dates). We want to sort this list by the months. Try single level sorting by Month. If you do this like the last lecture, notice it will sort alphabetically, not in month order.
+-We want it to be in proper month order (Chronologically). We need to use a CUSTOM sort.
+-Lets click into the list, and click the Big "Sort" button. We select sort by month. but now we want to change the "Order". Click the drop down arrow and see "Custom List..." 
+-Pick this and notice there is a built in custom list in Excel that will sort in month order, so click this option. Notice the list now sorts chronologically.
+
+Lecture 73: Filter an Excel List using the AutoFitter Tool
+-We may have now sorted the data in month order, but what if we only care about seeing the July records. We dont want to have to scroll down and find it. What if the list is too big. We can filter the list to only show the July records. 
+-We have a tool called "AutoFilter". 
+-Click into the list and Data tab the Sort and Filter section and click the "Filter" button. Notice there are now dropdown arrows next to the column headers. If you wanted to only see July records, click the dropdown on Month and select July. 
+-Excel automatically has "Select all". Deselect this and select the month you want to see. It will only show the July records. It condesned the other cells.
+-If you wanted a few months, select what you want. Now we are looking at July and August. What if now, we want to only see a few people in July and August? Click on the drop down at the different column header and select what you want to see.
+-To unfilter this, beside the "Filter button" there is a button that says "Clear". Click this and notice the list will go back to normal.
+
+Lecture 74: Creating Subtotals in a List
+-Now we are looking at the worksheet titled: "Subtotals".
+-We have a list with a few columns with names, prices and sales. 
+-We want to summarize some of this data. For example, I want to know the total sales of the specific products. How much Vanilla was sold? etc.
+-Before doing anything, we first want to sort based on what we want to subtotal. For exmaple, we want to see how much each product sold. We will sort by product name. Now we have groups. We can find subtotals for each group. 
+-To do this, we could create a new row below each section, then calculate each sum. This works but takes so long. 
+-Look in the Data tab and the "Outline" section. There is a button for "Subtotal". In this, we want to know at each change in what do we want a subtotal. So we want to select to product because we want subtotals at each change in product. We then can click what we want a subtotal of so we check the Sales. Then click OK and see it does it automatically.
+-Note on the left beside the row numbers we now have some long line. If we click on these numbers in the boxes, we can condense the data even more to show just the grand total, just the subtotals and grand total, or all of the above. There are also boxes with minus signs. If we dont want to see one group, click the minus sign to hide it.
+
+Lecture 75: Format a List as a Table
+-we are going back to the worksheet titled: "Employee Records".
+-As a list, we can do sorting, subtotals, etc. But what if we want to format the list to make it nicer? Also, if I now want to sort it, the formatting no longer looks nice. For example if we made every other row a different background color, it looks nice. If we now sort this, we see this is all mixed up and looks dumb.
+-Another motivation for this what if we wanted to do a calculation. For example, in the original list, set up a counter to see how many rows there are. If we now want to sort this list and want to only see certain groups, we expect the counter to update based on the filtered data. But it doesnt.
+-We have a big list but now we want to format it as a table.
+-In the "Home" tab there is a section called "Styles", then there is a button for "Format as Table". We can choose any option since it is just formatting. Then we can select our data. Notice there is a prompt asking about headers. See the list now looks nice.
+-In the table, we see a new tab called: "Table Design". There are many options here to remove duplicates, count rows, export, etc.
+-Lets turn on "Total Row". Notice at the bottom of the list gives us a count of the records. This whole row will also has a dropdown where we can perform other functions like average, count, min/max, etc. on each column. For example, click the empty cell below Phone Extension, we can perform any of the above functions.
+-Note in the bottom right of the table, there is a little blue arrow. We can extend the table and add more data if needed.
+
+Lecture 76: Using Conditional Formatting to Find Duplicates
+-Now we are still in the worksheet "Employee Records". We can easily find some duplicate records.
+-First we want to identify them, then we want to remove them.
+-In the list, find the easiest way to see if there are duplicates. Probably cant find duplicates by name because some people have the same last name. Choose a unique thing, in this case we can use Employee ID, since each employee should have a different ID. 
+-Lets highlight the ID list. Click the first cell in this list, then to select the whole column of values, use shortcut "CTRL+Shift+Downarrow". Now we are going to use "Conditional Formatting". Click on this in the home tab, and click "Highlight Cell Rules" and click "Duplicate Values". You select how to format the duplicate entires.
+-We see a few duplicates. If there is one duplicate, so 2 entries are the same, it will format both of these, not just the extra one.
+
+Lecture 77: Removing Duplicates
+-We have identified the duplicates by conditional formatting, now we want to remove the duplicates. These are two different steps!
+-Since we formatted the data as a list, we can click into the list and see the "Table Design" tab and to the left, we see a button for "Remove Duplicates".
+-If we did not format as a table, we can click into the list and click the Data tab, then in Data tools, there is a button for "Remove Duplicates". 
+-Those are equivalent.
+-When we click this, it wants us to identify what we consider duplicates. We do this by telling it what column it should look at to see duplicates. We dont want this to look at all columns. What if we have an employee get entered twice, but the second time his name is a nickname, so the first name is different. Excel sees this as a unique record. 
+-In our case, we only want it to look at the Employee ID column because these should all be unique.
+-Select this click ok and it will fix the list by removing them. Notice the red boxes are also gone.
+
+

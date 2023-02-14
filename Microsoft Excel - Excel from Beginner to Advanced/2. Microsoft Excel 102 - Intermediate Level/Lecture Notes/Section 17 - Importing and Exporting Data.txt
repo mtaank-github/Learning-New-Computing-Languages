@@ -1,0 +1,60 @@
+Section 17 Notes:
+
+How to import data into excel from different sources. Note, we will be using a NEW workbook for this.
+
+Lecture 90: Importing Data into Microsoft Excel
+-We will see this from Text files and from microsoft access databases.
+-Note I have the later version 2016.
+
+Lecture 91: EXCEL 2013 and OLDER -- Importing Data from Text Files
+-importing data into excel. One of the most common types of files used for importing data is through text files.
+-We are going to look at what is called a "tab text delimited text file". There is also another common text files called a "CSV" file, which is also called a "Comma separated" document.
+-Click the "Data" tab in the ribbon and look in the "Get External Data" Section. We will first look at "From Text" button. You navigate to where your text file is and click it. 
+-Upon clicking, you get a window called "Text import Wizard". You can choose "Delimited" (where a character separates each column like a comma or tab etc.), or a "Fixed Width" where each column has a distinct fixed width.
+-Ours is a text file and we also tell the Wizard that we have a header column. Then you need to tell the Wizard what type of separator you used (commas, tabs, space, etc.).
+-You can also change the number format of the entries or just leave them as general values.
+-Finally, you select where in the spreadsheet you want to place the data. Usually just select A1 cell.
+
+Lecture 92: EXCEL 2013 and OLDER -- Importing Data from Microsoft Access
+-Now we are switching to Microsoft Access Databases as the source of our data files. 
+-This uses a similar wizard as well will see. Same steps to start go to data tab and click "From Access". It is a ".accdb" file. 
+-Microsoft Access is a database tool. Inside our database we can see all the types of tables we have in a number of different queries. We can select which query we want to access and click ok. We now have our data.
+
+Lecture 93: EXCEL 2016 and NEWER -- Importing Data from Text Files
+-What we saw in the last 2 lectures were relevant for older versions of excel. The steps will look similar for the newer versions, but the interface may look a little different.
+-Lets start with a text file. Specifically a "tab delimited text file". 
+-We have the text file in the same folder as this lecture notes. Note that the data is all separated by tabs. 
+-A similar document can also be used a little different than a tab delimited text file is a CSV, where instead of tabs, we use commas to separate data.
+-In Excel, the Data tab and see the section called "Get and Transform Data". We click on "Get data from file" and click "from text/csv". We find the file by navigating the folder and select it. Double click it and see it opens up the Wizard. 
+-There are 3 options, File origin, Delimiter, and Data type Detection. Excel automatically sees that some values are text values and some are numeric. 
+-From here, we load the data into the excel work book right away, or we can click "Transform Data", which opens up a power query with all sorts of options.
+-We will click Load, then Load to, and choose if we want a table, pivot table, etc. Then, we want to choose the location of where to put the data in the spreadsheet.
+-Now the really neat thing about importing this data through these commands here is the table that we're
+about to create here is actually still connected to the original source, that original notepad document
+that I opened earlier. So if somebody updates that notepad, that text file, I can then refresh my table here and I would get the updated data connection.
+-Note that when you load it, on the right side it shows you "Queries and Connections" where you have more options for transforming the data.
+
+Lecture 94: EXCEL 2016 and NEWER -- Importing Data from Microsoft Access
+-Now lets look at another type of file to import from, which is Microsoft Access. In our folder, we have this as a ".zip" file. 
+-IMPORTANT: we have the data as a zip file, but in order to use the data/access it, we need to unzip it.
+-We can look into the database. See there is a welcome page then on the left the area we are interested in is "Tables". We see there are a number of sheets in this Tables tab. 
+-Go to Data tab, get and transform data and click now, "From Database" and select "Microsoft Access". Select the data from the file location.
+-The window we get is called "Navigator" and we see a list of all the queries and tables. The icon with 2 boxes overlapping is called a "query". The icon that looks like a worksheet are the tables.
+-Note: Some of the formatting doesnt not always transition over fully exact, but it is fine once you load the data.
+-Note also that if someone makes a change in the Access Database, it will update here because they are connected. It is a "Connected Document".
+-If someone does, we can click in the table, and see the tab called "Table Design" and click the "Refresh" button to update the table with new edits.
+
+Lecture 95: Microsoft Excel Legacy Import Options for New Excel Versions
+-If you like the older version interface for importing, you can actually activate it using Legacy features. If you click on data tab and click get data, there is an option called "Legacy Wizards".  This is not automatically there, it needs to be turned on.
+-Click on file, then options, then go down to Data and Turn on Legacy wizards for Text files and access.
+-Now it is there. 
+
+Lecture 96: Exporting Data to a Text File
+-We just saw how to import data, but now how do we export data.
+-We are going to open up the excel file called "Excel102Exercises" again and now we are looking at the sheet called "Export Emp Records".
+-We want to take this spreadsheet and export it into a text file.
+-Click on File tab, then go to "Export". We can choose the file type by selecting "Choose file type". We want to select "Tab delimited text file". 
+-We can also do this by going to File, SaveAs, then change file type to a number of formats. 
+-Both methods do the same job.
+-Now look in the folder we just saved to and see that we have the text file.
+-Note that our excel file has lots of formatting, but when we export, it does not keep all this. Note we get a pop up that tells us that some features will be lost.

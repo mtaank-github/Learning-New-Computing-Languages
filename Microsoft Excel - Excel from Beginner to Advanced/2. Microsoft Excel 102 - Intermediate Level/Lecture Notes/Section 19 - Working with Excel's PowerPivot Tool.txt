@@ -1,0 +1,52 @@
+Section 19 Notes:
+
+Using Power Pivot Tools
+
+Lecture 107: Introduction to Excel Power Pivot
+-This tool is an addin. You have to add it from online. Note it is not available in every version of excel. 
+-It is not available from all versions from 2013 and newer.
+-https://support.microsoft.com/en-us/office/where-is-power-pivot-aa64e217-4b6e-410b-8337-20b87e1c2a4b This link shows where this tool is available.
+
+Lecture 108: Why PowerPivot?
+-We just see why it is such a powerful tool.
+-Ive got 2 worksheets with lists, but now we want to make a PivotTable with data from both worksheets. Lets say we want to append 2 lists together to make one master list.
+-Another is to see 2 lists, one is customer info and one is order info, lets say we want to connect each customer to their order info. We can create PivotTables off of both of these information.
+-To do this we need a data model, which is from PowerPivot.
+
+Lecture 109: Activating the Excel PowerPivot Addin
+-Click File, then Options, then Add-Ins. We click Power Pivot for Excel and click ok. Note the tab is now there in the ribbon.
+
+Lecture 110: Creating Data Models with PowerPivot
+-Lets create a data model inside of Power Pivot. We are in the worksheet: "Customer Info". Click into the list and click the Power Pivot tab. Then click the button "Add to Data Model". It will launch the Power Pivot interface. It is a new interface, but is connected so if you edit in the Power Pivot interface, it affects the worksheet as well.
+-A data model is really just a set of data based off your excel data, but it can now contain multiple worksheets.
+-In the Power Pivot interface, it has its own ribbon and tabs. 
+-Lets close the Power Pivot interface now. Keep the excel window open. Now go to the worksheet "Order Info" and do the same thing. Notice now in the Power Pivot interface at the bottom, we have both worksheets of data there. They are 2 separate tabs.
+-Now to take advantage of the Power Pivot tool, we can relate these data sets to each other. Notice that in the customer info, we see the customer ID one time, but in order info, customer IDs show up more than once because they place multiple orders. Lets connect these.
+
+Lecture 111: Excel Power Pivot Data Model Relationships
+-We created a data model with customer and order info. Lets create the relationship. 
+-First in the Power Pivot interface, in the home tab, to the right we can click "Diagram View". This shows us all the tables, the headers themselves. Lets click on customer ID in the Customer Info, then drag it to the OrderInfo table and highlight Customer ID there. We now have a relationship between these two tables.
+-We will refer to the CustomerInfo table as the "Parent" table. The orderinfo table will be referred to as the "Child" table. In the Customerinfo table, we have customer ID. In the table this is going to be unique to each customer. These values will only show up once in that table once for one record. In the Orderinfo (child) table, the customer ID also shows up there, but it shows up multiple times.
+-Notice when we made the relationship, an arrow connecting the tables, there is a "1" on the parent table and an "*" on the child table. This shows that the ID shows up once in the parent and many times in the child table. 
+-If we didnt have the diagram view, we could also create the relationship in data view. Click on the header in the CustomerInfo Table right click on Customer ID column header, then click "Create Relationship". Then we can select the tables to connect and connect accordingly.
+
+Lecture 112: Creating PivotTables based on Data Models
+-Now have the tables related. We can now create the PivotTable. Go to CustomerInfo tab and look in the ribbon click the drop down arrow on the button "PivotTable". This will now take you back to the Excel interface. Create PivotTable on a new worksheet. 
+-Looks very similar to PivotTable fields, but now notice we have the 2 tables in the fields section.
+-Notice there will be other table also created with names like "Table4, Table3, etc.". We will ignore these for now and focus on our 2 tables called CustomerInfo and OrderInfo.
+-Go into CustomerInfo and well drag Country into the Row field. Now we have the Countries coming from the CustomerInfo tab. Now, well go to OrderInfo and grab OrderID and put into the value field. Note, by default it will sum these. But we dont want a sum of IDs, we want a count so go to field settings and change to count.
+-Look at what we have. We had 2 datasets. We can look and say, oh for a specific country, we have this many orders. Remember the Country information came from the CustomerInfo Table and the OrderIDs count came from the OrderInfo Table. 
+-We can do what we did with regular PivotTables now and generate any type of table of data we want.
+
+Lecture 113: Excel Power Pivot KPIs 
+-Now, lets look at creating a calculation inside of Power Pivot, and how we can use that calculation in our Pivot Table as a KPI or Key Performance Indicator.
+-We will need to manage/edit our Power Pivot data model. To re-access Power Pivot, under the Power Pivot tab, click "Manage" on the left.
+-In the OrderInfo table, lets say we want to take an average of the freight amounts. We will click on the column header, go to home tab inside of Power Pivot and on the RHS there is an option for Calculations. There is a button for "Create KPI". Notice the button is not active yet. We need to create the calculation first. Well click the drip down arrow on the "Autosum" button and click average. It will generate this calc in the Power Pivot interface. 
+-Now, notice we can create a KPI. Click this. Then we see "Measure" and "Absolute Value". 
+-Notice there is also a bar with values and red-yellow-green status. We can set up what we are measuring. 
+-Our average is $78 from the freight. See the red goes up to 40 and yellow up to 80. We want the average to be lower. We want the shipping cost to be lower. So green is good, so low is good. Lets make green on the low side.
+-In the "Absolute Value", what we want as the average for all the records. We can for now choose a random number. We can change it later. Lets put 50.
+-We can also choose the symbols. Then click OK. Notice in the cell with the average we calculated, there is a little symbol indicating that we have the KPI. Now can go back to Excel interface. Close out of Power Pivot. 
+-Inside the PivotTable field, we have the KPI, see the traffic symbol. If we click the drop down on this we see the calculation itself, the goal (which is the absolute value, remember we chose 50) and the status. In the fields, lets remove ShipVia and Counts. We can grab "status" into the value section. Notice in the table we see the symbols representing if for each country, they hit the goal.
+-Lets grab the Freight to the Values field (remember to change to Average) and see the data beside the symbols.
+-Lets go back to Power Pivot, and edit KPI, we can move the sliders for green and red zones, or change the absolute value. This will also update your excel PivotTable.

@@ -1,0 +1,60 @@
+Section 15 Notes:
+
+Want to look at functions in excel lists. We have a set of data but now we want to do some calculations. We are looking at the worksheet titled: "List Functions"
+
+Lecture 78: Introduction to Excel's function: DSUM()
+-Lets say we want to take a sum in the list, but of only one category? For example, in the worksheet, we have many categories but we only want to sum up the rent values.
+-We can use the "Database Sum", or "DSUM". Using this function, we can add criteria to the sum so we can tell it we only want rent summed for example.
+-First step, we need to set up the criteria section of the function. Here, we identify which column we want to search for the value in. For example, "Excel I was you to go to catergory column and look at rent".
+-Go to an empty column beside the list. We will use cell I2. We can write the header title here, but note it MUST be written identical to how it is in the list.
+-Below this cell in I3, we want to write the criteria, so we write Rent here.
+-We can choose to format this but doesnt matter.
+
+Lecture 79: Excel DSUM Function Single Criteria Continued
+-Now we have the criteria section set up. We have the header there and the criteria. 
+-In the column beside this, so J2, we are going to put the header of the column we want to sum up, so here we put the header "Total Sales". Below this in J3 is where we will write the formula.
+-So we write "=D" from here we can scroll down and find "DSUM". Click this and now we can fill in the arguments. This needs 3 arguments. In the formula bar, we can click the "fx" button to fill in the function arguments.
+-Arguments are: Database (where we highlight the whole list), Field (what we want to sum, so we need to only put the header cell here, so in our case put F1), and Criteria (here, we select cells I2 and I3, the header and criteria).
+-Click ok and see that we get the total sales of only rent.
+-This is really important because we can easily sum parts of the list. Without this, we would have to select the individual cells in the table to sum which takes super long. Function does it all for you.
+
+Lecture 80: Excel DSU Function with OR criteria
+-Now we want to have multiple criteria. So for example, sum up where category is equal to rent or equal to Software.
+-We can use the DSUM function, but now we need to adjust the Criteria argument. 
+-Now, we want rent or software. We can add this into cell I4. So now we want to go from I2:I4. We get the result which is the sum where catergory is equal to rent or where catergory is equal to software.
+
+Lecture 81: Excel DSU Function with AND criteria
+-Weve seen a single criteria with a single category and we included the software category so we get the total sales of where category equals rent or software. 
+-Now we want to use the AND criteria.
+-We need to add another bit of criteria, but for the division (one of the headers in the list). We need a new column. Lets go to column H now. We can now find the sum of the total sales where the category equals rent AND where the division equals North. 
+-In the criteria argument, we will select the cells H2:I3, and see the calculation.
+-NOTE: I moved the total sales calculations to make it look nicer.
+-We can now use both AND and OR criteria together. 
+-For example, we want the sum of total sales where Division equals North AND where category equals Rent, OR, where Division equals North AND category equals software. 
+In the little table, we will need to add North again in line with the Software in cell H3 and I3.
+Looks like: |    H     |    I     |
+	    | Division | Category |
+            | North    | Rent     |
+            | North    | Software |
+
+Lecture 82: Excel Function: DAVERAGE()
+-Once you know how to use one database function, you automatically know how to use others. They are used the exact same way, but now we are performing a different type of calculation. So DAVERAGE is written the same way as DSUM with same arguments, but it will return the average of the total sales instead of the sum.
+
+Lecture 83: Excel Function: DCOUNT()
+-Now, we want to get the count, how many sales have we done for each criteria.
+-Note, when you type "=DCOUNT", you get options for "DCOUNT" and "DCOUNTA". DCOUNT counts the cells containing numeric values. DCOUNTA counts cells containing text/alpha characters. Neither counts blank cells.
+-Some notes about the database functions:
+   -The spelling of the headers MUST match. Also cannot have extra spaces.
+   -There are more database functions to be used like DSTDEV, DVAR, etc.
+
+Lecture 84: Excel Function: SUBTOTAL()
+-subtotal function is still a database function, but it is a little different.
+-We will compare the subtotal function. In a new cell, we will calculate the regular sum of all the sales. We get a number. In the cell next to it we will use the subtotal function.
+-when we use the subtotal function, notice the arguments, it wants a Function number and a References.
+-Function number is where you tell it what you want to do. What type of subtotal do you want? Do you want a sum, an average a count, etc. 
+-Reference is where you put the range of cells you want to subtotal.
+-For function name, we have to put the number of the function, so we want to sum, there is a number that represents sum. You can click the link that says "Help on this Function" to find out the corresponding number of each function.
+-See that we get the exact same answer. This starts being useful when we want to take these sums of groups within the list.
+-Lets filter the list by division. For example, only include East divisions. Notice that the subtotal value changes to be of only the East division data. That is where this becomes really useful.
+
+
