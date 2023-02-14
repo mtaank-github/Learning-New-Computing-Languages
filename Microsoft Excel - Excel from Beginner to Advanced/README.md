@@ -7,8 +7,8 @@ This directory with highlight my work from the Excel course from Udemy. This cou
 
 This course is split into four parts:
   1. Microsoft Excel 101
-  2. Microsoft Excel 101
-  3. Microsoft Excel 101
+  2. Microsoft Excel 102
+  3. Microsoft Excel 103
   4. Master Microsoft Excel Macros and VBA in 7 Simple Projects
  
 I have created subdirectories for each of these. In these subdirectories, I share my lecture notes from following along the video lectures and supply my excel workbooks (.xlsx) wherein I use what was learned in lecture in a practical setting.
