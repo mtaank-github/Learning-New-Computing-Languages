@@ -1,0 +1,64 @@
+Section 6 Notes:
+
+Formatting Data in Excel to make it look better. Want bills to be in dollar units, add colours, etc.
+
+Lecture 36: Working with Font Formatting Commands
+-Start with the title. Cell B2. Select that cell, click Home tab and click Font section. You can change the font, colour, size, bold/italicize/underline, highlight cell, color text, etc.
+-Only want certain things spiced up, like titles, headers, etc. Dont want to bold everything.
+-We can change the theme of the whole document. Go to "page layout", then "Themes" on the left side.
+-The different themes offer different theme colours seen in the A with underline red.
+
+Lecture 37: Changing the Background Color of a Cell
+-Look at fill colour. Now we want to click on the paint bucket icon. That changes the background of the cell.
+-Notice that the text is now too big for one cell that it goes over into the other cells. To get the text to show up, highlight the other cells that it bleeds into and change the background color on these ones.
+
+Lecture 38: Adding Borders to Cells
+-We can add borders as well from the same font section. Click the icon with 4 boxes. Highlight the cell you want to border and click this icon drop down and pick the border you want.
+
+Lecture 39: Excel Cell Borders Continued
+-Want thicker borders or different styles of lines, go to the drop down menu to do this.
+
+Lecture 40: Formatting Data as Currency Values
+-Out current data is just numbers, but they represent currency. We want to have the symbols, the commas, the decimals, etc.
+-Select all the cells in the main spreadsheet, then go to home tab and look at the "Number section" you can select your currency. Notice the number bar now says "Accounting". Excel now reads these as dollar amounts. 
+-Now that it reads as currencys, but it looks too busy. OPTIONAL, you can format your table with the first and last column with the currency symbols. But change back the middle rows to the regular numbers.
+-To do this, highlight the data in the middle, click the comma button. Notice the currency symbol is gone. We can read this as currency but we dont need so many symbols.
+
+Lecture 41: Formatting Percentages
+-Highlight percentage data, and click the percent button in the number section of the home tab. Notice they becomes percents with no decimals.
+-If you want to change this, highlight the data, and again the number section, clock the "Increase decimals" button, to the right of the comma button. You can add as many decimals as you want or remove them.
+
+Lecture 42: Using Excel's Format Painter
+-Format painter is essentially a copy and paste, but only for the formatting.
+-Lets format one cell first do whatever you want. You dont want to redo all those formatting steps to other cells. To apply this formatting to a new cell, look at the Home tab then underneath "Copy" you see "Format Painter". Single click it to use it once. Double click it to use as many times as you want. Click it then click the cell you want to format. Done.
+-Can use this format painter to other worksheets as well. When you want to stop this format painter, re-click the format painter button or click escape button.
+
+Lecture 43: Creating Styles to Format Data
+-Another formatting option.
+-This is called "Cell styles". 
+-Lets format all the headers. lets say you format them all the same, but now want to change them. For example, change the color, you change the style and it will update all of the cells together.
+-In the home tab, look on the right the buttom "Cell Styles". 
+-Click the down arrow and click "New Style". You can name it and customize it to include whatever you want. Notice that in our spreadsheet, our headers are dates and text, we dont want to change these values to change, so we will deselect "Number".
+-Now click "format" and style it how you want. Then click "OK" and again. 
+-Notice nothing changed yet. Highlight all cells you want to do this to, then click on cell styles and find your custom style and click it. Notices they all change.
+-The good thing about this is that its always there and can be used whenever you want.
+-To change anything, you can click on your cell style, rightclick and click "Modify". Change anything you want. Click ok and notice it will update the cells. 
+
+Lecture 44: Merging and Centering Data
+-Lets go to the title, notice that it is in cell B2, but bleeds into other cells. We formatted the blank cells to match B2, but they are still blank. 
+-We want to merge the text into all these cells to make one big cell. Highlight all the cells, go to home tab, then click Merge and Center".
+-Careful when using this with many cell headers it tends to get messy. But it is best for titles.
+
+Lecture 45: Using Conditonal Formatting
+-Conditional formatting applies formatting based on a condition. For example, I want to turn a cell red if it is above $250. 
+-In the Home tab, see the "Conditional Formatting" button.
+-Highlight all the cells you want to format with a condition. Click this conditional formatting button.
+-You can set a condition for many cases. We want to set a condition for "Greater than". Set a value and set the formatting change.
+-There are many operations we can use. Notice if you need to update the value in the cell, if it is no longer in the condition, it will re-format to the original type.
+
+Lecture 46: Editing Excel Conditonal Formatting
+-What if we want to edit the condition, or edit the conditon formatting. We can click on "Conditional Formatting" and go down to "Manage Rules".
+-Note where it says "Show formatting rules for". You need to change from "current selection" to "This worksheet" to update all cells in the worksheet.
+
+
+

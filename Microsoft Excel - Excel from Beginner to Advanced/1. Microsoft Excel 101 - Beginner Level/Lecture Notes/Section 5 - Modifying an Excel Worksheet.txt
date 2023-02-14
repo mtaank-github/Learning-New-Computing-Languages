@@ -1,0 +1,43 @@
+Section 5 Notes:
+
+Working with functions
+
+Lecture 29: Moving and Copying Data in an Excel Worksheet
+-Want to be able to move all of the spreadsheet content over a column or move it to start at a different position.
+-For example, want top left to be at B2 instead of A1. 
+-Highlight the entire range, then grab the outline/border and cursor changes from a plus sign to the 4-headed arrow. We can hold it down and move anywhere. Can do this with individual cells as well.
+-Also have option for cut and paste.
+-We can also move these to new worksheets. Click plus to get a new sheet. and cut and paste accordingly.
+-You can do this between other excel documents as well.
+
+Lecture 30: Inserting and Deleting Rows and Columns
+-we have 5 bills, but what if we want to add a new bill, so a new row. Lets say we want to add a new bill between the credit card (row 7) and food (row 8). Highlight all of row 7 by click the row number on the far left, we can click "CTRL,SHIFT,+" or rightclick and click "Insert".
+-Same for columns. Click the column you want to insert a new column beside, click "CTRL,SHIFT,+", or just rightclick and click "Insert".
+-Notice how all the values in the formulas automatically update.
+-We can also delete rows and columns. Highlight the row or column, the click "CTRL,-" to delete it. Or rightclick and click "Delete".
+
+Lecture 31: Changing the Width and Height of Cells
+-To fix the width between 2 columns, hover the line between 2 columns, noting the 2-sided arrow. You can drag it to the size you want. You can also double click it for Excel to automatically size them to fit the data in the cells.
+-You can also adjust multiple columns at once, highlight all columns then adjust the size on one of them to adjust all of them at the same time.
+
+Lecture 32: Hiding and Unhiding Excel Rows and Columns
+-To hide columns, select a column, rightclick it and click "Hide". Notice its gone. If you hover that area, you will see the double sided arrow, you can drag it and reveal the column again. 
+-What if we dont want users to be able to unhide stuff? We can protect the worksheet. Will see this later.
+-On the "VIEW" tab at the top of screen, we can unselect the "Headings" so it hides the columns.
+-To hide multiple columns at once highlight all of them and rightclick the column headers and click "Hide". to unhide, select the 2 columns on either side of the hidden columns and right click then click "Unhide".
+
+Lecture 33: Renaming an Excel Worksheet
+-We can have many different sheets by clicking the plus sign, but we can rename them as well.
+-On the worksheet tab at the bottom of the screen, rightclick "Sheet2" then click "Rename". Even easier, double click the "Sheet2" tab.
+
+Lecture 34: Deleting an Excel Worksheet
+-Right click on the sheet you want to delete and click "Delete".
+-Be careful when deleting sheet from a workbook. You cannot get it back. Cannot undo this.
+-The only way to get it back is to not save your work, and exit out of excel. You didnt save the sheet being deleted, so you can get it back, but you will lose a lot of work.
+
+Lecture 35: Moving and Copying an Excel Worksheet
+-To move a sheet, you can drag the sheet tab you want to move and drag it to whatever position you want. If you wanted to move a sheet to be the first sheet, drag it to the front.
+-You can also copy sheets. If you hold "CTRL", then drag a sheet, you will make a copy of it. Notice the (2) beside the sheet name.
+-What if you wanted to move a sheet to another workbook? to a different excel file. 
+-Right click on the sheet you want to move or copy. You can select a new book to move it to. To create a copy of this in the new workbook, check the box that says "Create a copy".
+

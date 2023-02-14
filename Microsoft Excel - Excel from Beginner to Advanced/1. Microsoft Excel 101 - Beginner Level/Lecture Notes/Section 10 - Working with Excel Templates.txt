@@ -1,0 +1,20 @@
+Section 10 Notes:
+
+Creating, Opening and Making Excel Templates
+
+Lecture 63: Intro to Excel Templates
+-Lets say we want to recreate this spreadsheet for a new year. We dont to re-make this. We can set this as a template, that way we can make the budget for 2020 with the same formatting, like headers, titles, formuals, just the data will missing.
+-If we delete all the data itself, this itself is a template. You need to fill in new data, and see the totals, percents, min/max, etc. will automatically be calculated because the formulas, headers are already set up in the template.
+
+Lecture 64: Opening an Excel Template
+-In File, "New", you can see there are many templates already provided by Excel. See Personal and Office Templates. 
+-You notice there is a search box. You can look for any type of templates you want. For example, we can find a template for monthly budget. You will have the download the template when you click create.
+-Keep in mind Excel templates are just the basic structure, but we need to add in our data.
+-We looked at "Loan Amortization Schedule". We can change the values and see how the template automatically fills in the rest of the cells for us doing all calculations.
+
+Lecture 65: Creating a Custom Template
+-Now we want to make a custom template for us to use. Lets create a copy of our template and move to another workbook. Create a copy to a new workbook.
+-This new workbook is what we will make into the template. We dont want to accidently mess with the current worksheet so we make a copy and use that.
+-In the new book, remove the data entries, but NOT the formulas. Note the formulas with error out, but that will fix itself when new data entries are added.
+-To turn this into a template, click file, saveas. Now in the "Save as Type", we want to change from "Excel Workbook (.xlsx)", we change this to "Excel template". Notice it will change the directory to "Custom Excel Templates". This is just so you can easliy find it.
+-To open up this new template, go to file, new then click on "Personal" tab. You should see the template you just made. 

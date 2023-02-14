@@ -1,0 +1,34 @@
+Section 9 Notes:
+
+Looking at printing your document how it is going to look.
+
+Lecture 57: Viewing your Document in Print Preview 
+-Lets see how the spreadsheet currently looks. Go to File, then Print to see the "Print Preview".
+-Want to look at how to print this with only certain cells, number of cells, etc.
+
+Lecture 58: Changing the Margins, Scaling and Orientation
+-We have the print preview open. We can change the orientation, scaling and margins.
+-Notice for example, the chart is cut off on the first page and is continued on second page.
+-Go back to document. Notice the line between column I and J. This dotted line indicates the page break. So everything to the left of this line is Page 1. Everything from here to the next page break line (between columns S and T) are page 2.
+-Move the chart to page 2 and notice there is no cutoff now.
+-Note one thing about printing, if you are currently selecting the chart (You clicked on the chart then clicked print), it will ONLY print the chart. To print the whole spreadsheet, unclick the chart and click anywhere else.
+-To change the orientation of the page, in the print preview, you can select orientation and change from portrait to landscape. Notice the page break lines in the spreadsheet also update. In landscape mode, the first page break is between columns L and M.
+-To scale your page, in the print preview, click on "No Scaling" and click custom scaling. You can click "Fit to" to make it all fit in the page. You can also change the sizing by using the "Adjust to".
+-If you adjust the scaling, notice now in the spreadsheet you can see the dotted lines showing the pages.
+
+Lecture 59: Excel Worksheet Margins
+-Notice in all the print previews, none of the pictures were centered in the page. We are eating up parts of the page. Lets change mainly the left and right margins. Click on "Page Setup" and go to "Margins".
+
+Lecture 60: Working with Page Layout View
+-Page Layout view. Go to View tab, then see "Workbook Views" section. The default is "Normal View". We can click on "Page Layout View" and it shows us the pages explicitly. We can see the margins as well so you can adjust the pictures and content accordingly.
+-This is beneficial because we can see exactly how it will look on a page when we want to print it.
+
+Lecture 61: Adding Header and Footer Content
+-Working still in Page Layout view is perfect for adding some Headers and Footers.
+-At the top of each page section, there are 3 empty boxes that will prompt you to add header information. Similar for Footers at the bottom of the page.
+-To add page numbers, dont just write number 1 in there because on all pages, it will say "1". If you go to "Header and Footer" tab in the ribbon, there is an option for "Page Number". You can also add current date/current time, also important is file path. 
+-Click on the "File path" buitton to display this.
+
+Lecture 62: Printing a Specific Range of Cells
+-Now what if we only want to print a certain area of the document. For example, want to print the table without min/max stuff. You highlight the content you want to print, click file->print. It still has everything. From here, you go to "Print Active Sheets" drop down and click "Print Selection" to print just the selected area.
+-Another way to do this is to set up a "Print area". In "Page Layout" tab, click "Print Area". You highlight the print area you want. Then when you go to print, it will only print what you selected in the Print area. To get rid of this, click on "Print Area" again but now click "Clear Print area".

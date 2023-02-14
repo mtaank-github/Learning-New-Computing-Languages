@@ -1,0 +1,27 @@
+Section 7 Notes:
+
+We are going to look at inserting various objects whether they be images, shapes, smartart, etc.
+
+Lecture 47: Inserting Images
+-Go to insert tab, then there is a section called "Illustrations". There is a button for Pictures. We can choose where to get the picture from. 
+-Lets try online images. Click this and search what picture you want. Notice this will come with extra info in a text boc. (just delete this). 
+-You can move your images around to wherever you want and adjust the size, etc.
+
+Lecture 48: Inserting Excel Shapes
+-All types of shapes.
+-Shapes help add to the message of the work. For example, lets use a block arrow to point out that rent is a lot. 
+-Go to insert tab, illustration tab, and go to "Shapes". There are many options. 
+
+Lecture 49: Formatting Excel Shapes
+-Want to change the color and size and outline of the shapes.
+-Click on the shape, use the white and orange circles to extend/compress the shape however you want.
+-Different for every shape but you can format it however you want.
+-To change color, click on the shape, then notice the tab called "Shape Format". Change how you want there.
+
+Lecture 50: Working with Excel SmartArt
+-SmartArt allows you to create diagrams.
+-In the worksheet go to insert tab and illustration section and click on "smart art".
+-When you pick a smart art, notice you now have a couple of new tabs used for editing the smart art and formatting it.
+-In the "text pane" you can edit the text on the diagram. 
+-If you want to add some extra headings, or subheadings you can do that in the formatting.
+-If you click enter on one of the text boxes, you'll make a new shape in the diagram.

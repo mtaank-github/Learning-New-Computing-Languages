@@ -1,0 +1,47 @@
+Section 8 Notes:
+
+Creating Basic Charts in Excel.
+
+Lecture 51: Creating an Excel Column Chart
+-Want something more visual to see the data. We will not be including the totals, want to see the raw data. 
+-Highlight the headers and the data cells. Then in the insert tab, go to "Charts" section. Click the button with the bars. We just made a bar graph to see the data. 
+-Certain charts are good or bad depends on the amount of data.
+
+Lecture 52: Working with the Excel Chart Ribbon
+-Now that we made a chart, we can play around with the features of the chart. Including bar colors, legend, axes, etc.
+-When you select the chart see the 3 boxes to the right of it. Edit it from there. Can also edit these without these by clicking the "Chart Design" and "Format" tab. 
+-Click on chart elements and add/remove stuff whatever you want.
+
+Lecture 53: Adding and Modifying Data on an Excel Chart
+-Lets say we want to change the selected data in a chart. Modify the data being used in the chart.
+-Select the chart and go to Chart design, There is a section called "Data" and click "Select Data". We see the range of cells being used. 
+-Delete Chart Data range and customize it. If you delete it and just click ok, it will be a blank chart. So anyeays you can re-select the data you want to use now by highlighting the columns. Use control to highlight non-contiguous columns.
+-Lets try to remake the chart but not include Feb. Go to select data, choose the necessary columns. Notice that in the chart, we have bars for jan and march, but not feb. Also, why does Feb still show up on the chart? We didnt include it in the selected data.
+-This is a little bug. We can click on the axis and click axis type. In Axis options, click on "Text Axis" and this fixes it.
+-Can do this same thing if we in this case didnt want to include credit card (row). Notice this bar will go away.
+
+Lecture 54: Formatting an Excel Chart
+-Can do font changes, colours, etc to make it more presentable.
+-Select chart and click "Chart design" tab. There are options for different backgrounds, different bars, etc. 
+-Can also go to the "Format" tab. You can format individual bars for example, change the color of all rent bars to red.
+-Change the fonts as well. Click on the axis with the text and click the home tab. That is where the font stuff is.
+-With the chart title, you can assign a cell to the title. Click the title box then go to the formula bar. Click the merged cell title . We have connected the chart title to the cell with the title. Notice if we change the title in the cell, it will automatically update in the chart.
+-Also, if you update the data in the spreadsheet cells, it will automatically update if changed.
+-Can add chart elements as well.
+
+Lecture 55: Moving a Chart to another Worksheet
+-Notice that the chart went onto the same worksheet as the spreadsheet. We can move this to another sheet if we want.
+-Select the chart and click on "Chart Design" tab. Click on the "Move Chart" button on the right side. You can move to a new worksheet or existing worksheet.
+-Note that even though the chart is in a different worksheet, it is still attached to the data in the monthly budget sheet. If I update some of the data, the chart (which is now in another worksheet) will also update.
+
+Lecture 56: Working with Excel Pie Chart
+-We created a standard 2D bar chart. Another useful chart is a Pie chart. In our case, this is a useful type of chart.
+-Lets create this chart. Same way select all data but now want to use the Pie chart.
+-Notice this defaults to just the rent with the 3 months. Even though we selected all the data, the pie chart only uses the rent data. 
+-Supposed we wanted to look at only one month. We can click "Switch Row/Column" in chart design. We see each bill for all of january.
+-Now what if we want Feb now? Clicking the switch row/column goes back and fourth with rent and jan. If we now click chart design and now "Select Data". We see the data range is all cells, but it defaults to first column or first row. 
+-If we want just feb, delete the chart data range and now select only the feb data.
+-If you hover the pie chart, you can see the numerical values and percents. But they are not shown visually on the graph. We want these on the chart. Go to chart design and add elements.
+-If you double click the chart labels you will get Format data labels and format how you want.
+
+

@@ -1,0 +1,62 @@
+Section 4 Notes:
+
+Working with functions
+
+Lecture 20: The structure of an Excel function
+-Most common function is the "sum function". Type "=sum()" to use this. 
+-3 parts to a function:
+   -All start with the equal sign
+   -followed by the equal sign is the function name
+   -finally is the arguments of the function in parentheses.
+   -for example: "=sum(B4:B9)".
+-Note: to say we want the range of B4 to B8, we use the colon to denote "from B4 to B8"
+-Function arguments window. In the formula bar, when you type your function, you can click the "fx" symbol and you will open this window.
+-lots of functions: there are 461 built in functions. Microsoft add/remove functions all the time.
+-in the formulas tab, there is a "Function Library" where you can see lots of functions.
+
+Lecture 21: Working with the SUM() function
+-we only have 5 items to sum, but what if we had 100, 1000, more. We want to use functions to make this easier.
+-go to formulas tab, go to "math and trig" tab, then youll see a bunch of math functions. It automatically selects the data for you.
+
+Lecture 22: Working with the MIN() and MAX() Functions
+-Made a new row (#11) with labels for min and max.
+-Similar to the sum function. Select a range of cells. But now, instead of summing up the values in that range, it tells you the minimum value in this range of values.
+-Notice in "Math and Trig", there is no min and max function. Look in "More Functions" then "Statistical". You will find it there.
+-You may have to adjust the entry in "Number 1" in the formula when you use the function from the formula bar.
+-MAX() function is identical but now returns the maximum value of a range of numeric values.
+
+Lecture 23: Working with the Average Function
+-Note using regular math, we want to sum a set of values, then divide by the number of values: example (1000+125+150+300+100)/5. Too much math if there is more data.
+-Can go to formulas tab, go to "More Functions" then "Statistical" to find the average function.
+-Could just type "=average()", or short form type "=avg()".
+
+Lecture 24: Working with the COUNT() function
+-Make new column called count. This tells you a count of how many bills youve payed in the spreadsheet.
+-Note: Count function only counts numeric values.
+-Notice if we did not pay rent for one month, delete it from the spreadsheet, the count will update itself due to the reference.
+
+Lecture 25: Adjacent Cells Error in Excel Calculations
+-Notice that some of the cells where we used these functions have a green triangle in the top corner of each cell. If you hover these, there is a symbol that looks like something is wrong.
+-Excel doesnt know that these numbers are bills or dates or etc. It just knows these are numbers. It sees the date and thinks "Thats a number too" and so it thinks we should put that into the formula. 
+-We can select all these cells, hover to the diamond error symbol and click "Ignore Error".
+-Sometimes it does identify real errors but adjacent cells error is not an error so click ignore.
+
+Lecture 26: Using the AUTOSUM() Command
+-Want to streamline these operations even more using shortcuts. 
+-We saw the math approach, and the sum function approach. Now lets see autosum.
+-In the formulas tab in the ribbon, there is a big sum symbol and says AutoSum.
+-Click in the cell you want to calculate the sum, then click the autosum button. It does it automatically.
+-Sometimes, Excel tries to assume too much. Notice it doesnt always work due to its defaults.
+-In the case it didnt work (cell E6), you just have to grab the correct data.
+-Notice the autosum button in the formula bar has an arrow drop down menu. It has the min max count and average functions there.
+
+Lecture 27: Excel's AutoSum Shortcut Key
+-Keyboard shortcut. Click "ALT+=" and it will autosum for you.
+-If you hover the AutoSum button in the ribbon, it also tells you this shortcut.
+
+Lecture 28: Using the AutoFill Command to Copy Formulas
+-Notice that when we calculated the totals, we are using the exact same formula. We are summing the above 5 cells. This is repeated for jan,feb,march. We have to be able to automate this. This is where AutoFill comes in.
+-Want to move the formula to other cells. I.e., move formula from B9 to C9 and D9.
+-AutoFill feature is the little green box in the bottom right corner of the selected cell. 
+-To copy the formula to other cells hover the little box in the corner and hold it and drag to the other cells to autofill the other cells.
+-This can also work with absolute references. For the percent tab, we want to autofill this. So we type "=E4/$E$9". When we drag the autofill, notice that the denominator doesnt change in any of the cells due to the absolute reference. But the E4 does get updated.
