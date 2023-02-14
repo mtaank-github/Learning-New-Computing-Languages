@@ -1,0 +1,64 @@
+Section 3 Notes:
+
+We are going to be starting with a blank worksheet and we will work towards making a monthly budget spreadsheet. including labels, numerical values, calculations like totals, formatting.
+This excel file will be in the according folder in the PC.
+
+Lecture 13: Entering Text to Create Spreadsheet Titles
+-Note: Microsoft likes to push out updates so some stuff may change. Well cover those new features.
+-May see a yellow bar saying theres an update.
+-Put title in Cell A1: "Monthly Budget" 
+-Now drop to A3, well create labels for each Bills like Rent, Phone, Credit cards, Food, Candy, then add a totat.
+-Now create the columns as the months: Jan, Feb, Mar.
+-Basic structure of a spreadsheet.
+
+Lecture 14: Working with Numerical Data in Excel
+-Add some currency amounts for each bill for each month.
+-Now filled out the dollar amounts for each bill for each month.
+-Note: There is a difference between the text values and numerical values. Text is left-aligned, but numeric values are right-aligned.
+-This is the case in a majority of applications because it is clear that these are two different types of data.
+-Try decimals, we will notice that the decimals will be aligned because of right alignment.
+-If you ever import data into excel and see the numeric values are left aligned, you will see a little green triangle in the top left of the cell, and that is excel saying something is wrong. Excel is treating these values as text and not numeric. 
+-To fix this, you can click on the box and click "Convert to Number".
+-Now have the budget with all the number values.
+
+Lecture 15: Entering Date Values in Excel
+-Now we are looking at types of values. We have seen "Alpha" characters, thats out labels. We have "Numeric" values are our currency values. Now we want to look at "Dates" type of data.
+-We have months, but we want the full dates: Day, Month, Year data.
+-In the spreadsheet, we want to designate the year for each month because we may want to extend this by one year.
+-To do this, we will type "Month-2016". Where we use the hyphen and year with no spaces. 
+-Notice, you double click the cell to see the entry and it looks like a date. (Can see this also in the formula bar).
+-Also notice, these dates are now right-aligned. Excel treats dates as numeric values.
+-See it just says "Jan-19". How do we make it say "2019" or add the specific day. We want to format these cells. 
+-Highlight these cells, click on "Number" in the home tab, and click on "More Number formats". Click dates as the category. We want month and year, so select accordingly.
+-We dont see the type we want so instead of date, go to custom and write it how you want it. So in the Type bar, we will type: "mmm-yyyy" So month is denoted by 3 characters and year is denoted with 4 characters. 
+
+Lecture 16: Working with Cell Reference
+-To reference a value or location in the spreadsheet.
+-For example, if you want to look at info in February. Notice that Feb starts in Cell C3. For example, check candy is Janurary, well that is cell B8.
+-If want to check all values in Feb 2019, you select a range of cells, so it would be "C4:C8". The colon indicated that you select from C4 to C8. 
+-You can also select noncontiguous cells, like the headers and rent. 
+-To select for example, the headers, rent and food. Note food is not attached the rent and headers, select headers and rent by drawing a box around them. To also include food, hold "control", then select the food row as well.
+
+Lecture 17: Creating Basic Formulas in Excel
+-Now lets do some math. Can do a lot of math for us. We will start with basic formulas.
+-Want to take the sum for each month.
+-We talked about data types including alpha characters, numeric and dates, well now we can type formulas. start with a "=" always.
+-To add up the numbers, could type the numbers, but it would take super long.
+-For example: typing: "=1000+100+150+300+100" we get 1650. It did math. Bad because you could easily make a mistake. Also bad because what if at a later time we want to change one value in Jan. It updates in the table, but did not update in the formula.
+-Now lets use the cell references. Type now "B4+B5+B6+B7+B8". we get the same answer.
+-Now, if any values get updated, they will be updated in the formula too.
+
+Lecture 18: Relative Versus Absolute Cell References in Formulas.
+-Relative reference vs Absolute/Fixed reference
+-Leave first formula alone in B9. These reference types "B4+B5+.." is called relative reference.
+-Relative reference. for example, copy this formula in B9 into C9 to sum up feb. Notice that the formula now uses C as the column instead of B. It performs the same formula, but its relative to its location.
+-See column of 10s, in a new location. The formula still works. Its the same sort of situations, adding up the previous 5 cells. You keep the consitency in the document.
+-Now want to see absolute reference. See F column and well type Percent. We want to see how much of each value is of the total. 
+-Well type "E4/E9" for rent. now want to do the same thing for food, credit card, etc. Notice it doesnt work.
+-We are using a relative reference so that means we will go from E4 to E9 which is 5 cells down. But when go to the next row, it uses the next 5 rows, but the last row is empty. In the Phone case: we see the formula change to "E5/E10". we have nothing in E10. We always want the denominator to be E9.
+-We put a "$" in front of the "E" and the "9" as "$E$9". So the line is now "E4/$E$9". Now the denom will always be E9.
+
+Lecture 19: Understanding the Order of Operations
+-SEE NEW FILE FROM RESOURCES. We will complete this exercise.
+-BEDMAS
+
