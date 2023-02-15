@@ -1,4 +1,4 @@
-# Microsoft Excel - Excel from Beginner to Advanced
+# R Programming - R Language for Absolute Beginners
 ## Udemy Course Link: https://www.udemy.com/course/r-for-absolute-beginners/
 ## Course Instructor: Ivo Bernardo
 ### Mukesh Taank
