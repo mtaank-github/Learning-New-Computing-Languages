@@ -1,6 +1,6 @@
 # Microsoft Excel 102 - Intermediate Level
 
-In this part of the course, we mainly looked at the fundamentals of Excel and its interface.
+In this part of the course, we mainly looked at more intermediate functions and areas of Excel and its interface.
 
 We utilized a base workbook (see file titled: "Excel102Exercises.xlsx"). This workbook contained numerous worksheets that contained:
   - Sales Data
@@ -9,7 +9,6 @@ We utilized a base workbook (see file titled: "Excel102Exercises.xlsx"). This wo
   - Order Information
   - Hiring Information
   - Multiple lists with currency values
-  
 All of this was provided by the Udemy course. 
 
 As I went through the lectures, this workbook was updated following along with the instructor. All of the updates were done by me.
