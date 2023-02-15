@@ -15,9 +15,10 @@ As I went through the lectures, this workbook was updated following along with t
 
 Going through the lectures, some of the main skills I picked up included:
   - Cell References vs Name Ranges
-  - Using Excel's conditional functions including IF(), AND(), COUNTIF(), SUMIF() and IFERROR()
-  - Working with Excel Lookup functions including VLOOKUP(), HLOOKUP(), INDEX() and MATCH()
-  - Text-based functions including LEFT(), RIGHT(), MID(), SEARCH(), CONCATENATE() and LEN()
+  - Using Excel's conditional functions including **IF()**, **AND()**, **COUNTIF()**, **SUMIF()** and **IFERROR()**
+  - Working with Excel Lookup functions including **VLOOKUP()**, **HLOOKUP()**, **INDEX()** and **MATCH()**
+  - Nesting Excel Functions
+  - Text-based functions including **LEFT()**, **RIGHT()**, **MID()**, **SEARCH()**, **CONCATENATE()** and **LEN()**
   - Auditing an Excel Worksheet
   - How to Protect an Excel Worksheets and Workbooks.
   
