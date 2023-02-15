@@ -15,10 +15,10 @@ As I went through the lectures, this workbook was updated following along with t
 
 Going through the lectures, some of the main skills I picked up included:
   - Working with Excel Lists
-  - Using List Functions, including Database functions like DSUM(), DAVERAGE(), DCOUNT(), and SUBTOTAL()
+  - Using List Functions, including Database functions like **DSUM()**, **DAVERAGE()**, **DCOUNT()**, and **SUBTOTAL()**
   - Data Validation
   - Importing Data (from Text files and from Microsoft Access Databases) and Exporting Data (as Text Files or CSV files)
-  - Generating PivotTables and using Microsoft Excel's PowerPivot Tool to better present the data from lists.
+  - Generating **PivotTables** and using Microsoft Excel's PowerPivot Tool to better present the data from lists.
   - Working with very large datasets (1000+ records)
   
 This part of the course really covered some more involved areas of Excel. It was beneficial to be able to do the work myself on my own spreadsheet to get some working experience with these different types of datasets.
