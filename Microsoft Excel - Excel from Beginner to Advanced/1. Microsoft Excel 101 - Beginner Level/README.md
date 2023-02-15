@@ -13,9 +13,14 @@ We learned the following skills:
   - Inserting images and creating charts
   - Printing worksheets
   - Excel Templates
-
-We did some numerical work, including using functions like Sum(), Average(), Count(), Autosum, etc.
-We also did some formatting work, including formatting a list as a table, making cosmetic changes to the data presentation including column headers and titles, conditional formatting,  etc.
+  
+Going through the lectures, some of the main skills I picked up included:
+  - Entering and Editing Text and Formulas
+  - Working with Basic Excel Functions including: **SUM()**, **MIN()/MAX()**, **AVERAGE()**, **COUNT()**, and AutoSum.
+  - Modifying and Formatting an Excel Worksheet
+  - Creating Charts and Generating SmartArt
+  - Printing Excel Worksheets
+  - Creating Excel Templates
 
 This part of the course really covered the most basic areas of Excel. It was beneficial to be able to do the work myself on my own spreadsheet to get some working experience of the Excel interface.
 
