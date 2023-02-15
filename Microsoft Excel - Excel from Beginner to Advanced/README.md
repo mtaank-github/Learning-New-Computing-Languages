@@ -1,5 +1,6 @@
 # Microsoft Excel - Excel from Beginner to Advanced
 ## Udemy Course Link: https://www.udemy.com/course/microsoft-excel-2013-from-beginner-to-advanced-and-beyond/
+## Course Instructor: Kyle Pew
 ### Mukesh Taank
 
 
