@@ -1,0 +1,80 @@
+Section 25 Notes:
+
+Working with Excels LOOKUP() Functions.
+
+Lecture 132: Microsoft Excel VLOOKUP() Function
+-NOTE: We will be using 2 worksheets titled: Sheet1: "VLOOKUP Function" and Sheet2: "Master Emp List".
+-VLOOKUP or Vertical-Lookup function.
+-Scenario: We have a master list of employee records (Sheet1), but we want a subset of that data (in Sheet2). We can filter, sort, copy and paste to get that data.
+-But, if we are given the IDs, we can get all other information.
+-In Sheet1, we have the subset of data we want to generate from Sheet2.
+-We are given ID and First name, we want to fill in information for Last name, Department and Pay Rate.
+-Lets start with Last name. In the function bar lets type VLOOKUP and click fx. We see it takes 4 arguments: 
+	-Lookup_value (what am I searching for in order to find Last name: In our case we give it the ID on Sheet1, but we want to only make this a partial reference so that when we drag this down and to the right, we want the B column to be the same because that is where the specific IDs are [well put $B3])
+	-table_array (We know we want to look for the ID, but where do you want to find this?: For us well click the next sheet and highlight the whole table in Sheet2 including headers. This has to be Absolute. so use dollar signs on all these cell referecnes of the table)
+	-col_index_num (ok so I look in this list and find the ID, but what column do I want to return back: We want to return last name, which in Sheet2, is in column #2)
+	-and rangle_lookup[optional] (logical value to find the closest match in the first column. We can put TRUE or leave blank, but since we want the Exact match, we put False. We want exact match. If it doesnt find an exact match, well get an error. We can use the IFERROR function to deal with this.)
+-So in the cell, we typed: "", and dragged it down the column.
+
+Lecture 133: Microsoft Excel HLOOKUP() Function
+-NOTE: We are now using 2 worksheets titled: Sheet1: "HLOOKUP Function" and Sheet2: "Master Inventory List".
+-This next function is VERY similar to the VLOOKUP(). Now we have the HLOOKUP, or Horizontal-Lookup. We are now going to search a list horizontally, and return a value from a row index number.
+-In sheet1, we have a table where we want to find the inventory of a specific product code at different warehouses. In Sheet2, we have a list where each row is for the different warehouses. If we want to do this manually, We go to sheet2, and go to row 3 to find info on Warehouse 1. 
+-We can do this very easily using HLOOKUP().
+-The lookup value is going to be the specific item code so we use this an absolute reference to the item code.
+-The table array is the entire list in Sheet2 and make this absolute.
+-The row index number, is the row where the info for Warehouse 2 is.
+-Finally the range lookup well set to False.
+-Altogether we typed: "=IFERROR(HLOOKUP($B$3, 'Master Inventory List'!$A$2:$G$5, 3,FALSE), "Item Code Not Found")".
+
+Lecture 134: Microsoft Excel INDEX() Function
+-NOTE: We are now looking at sheets titled: Sheet1: "INDEX MATCH Functions" and Sheet2: "INDEX MATCH Master Emp List"
+-INDEX and MATCH are pretty similar to V/HLOOKUP function. The V/HLOOKUP has some limitations.
+-In the VLOOKUP function, the first argument we gave it the ID, but this function looks in the provided table array and ONLY looks at the left-most column for these IDs. What if our IDs (which are the easiest to search for) and in a different column? That is a limitation.
+-Well start with the INDEX function.
+-Think of Sheet2 as just a big index, a big grid of data.
+-This function returns the the position of a specific value. For example, I want to know whats in column 3, row 10. 
+-In sheet1 in cell C4, well type: "INDEX("
+-Note: There are two INDEX functions, we want the first one which contains 3 arguments.
+-This has 3 arguments: Array (set of data too look at: So well take all of Sheet2". Make this absolute), Row_num and Column_num (Put the specific position in the index we want).
+-We typed: "=INDEX('INDEX MATCH Master Emp List'!$A$1:$I$38,10,3)". The last 2 arguments can be changed to any (row,column) index.
+
+Lecture 135: Microsoft Excel MATCH() Function
+-Now well look at the MATCH function.
+-This function returns the numeric position of a specific value. If we import certain Emp IDs, it will give us the numeric position.
+-This funciton has 3 arguments: 
+	-Lookup_Value (what are we searching for?: we are looking for IDs)
+	-Lookup_array (where are searching for this: just use absolute reference of the columns with the IDs in Sheet2)
+	-Match_Type (Here, we can put either 1,0,-1. If we put 1 or blank: MATCH finds the largest value that is less than or equal to the lookup_value. If we put 0: MATCH finds the first value that is exactly equal to the lookup_value. If we put -1: MATCH finds the smallest value that is greater than or equal to the lookup_value).
+-Well type: "=MATCH(B4,'INDEX MATCH Master Emp List'!$A$2:$A$38,0)".
+
+Lecture 136: Microsoft Excel INDEX() Function and MATCH() Function Combined PART 1
+-Now we want to be able to combine these functions. 
+-First thing: Remember how VLOOKUP() has to read the left most column, lets see how this limitation is gone by moving the ID column somewhere else. Well move it to Column D instead of A.
+-In our list called :"INDEX & MATCH", lets return the department of the specific Emp ID. We will nest these 2 function to do so.
+-Well type: "=INDEX(". Note we start with the index function because recall its arguments. We know the array, which is the whole department column. But we dont know the row or column for the next arguments. We can use the match function to return the numeric position of the row and column.
+-Well now add: "=Index(Array, MATCH()). In these match functions, well type the lookup_value, which is the ID, then the lookup_array well grab the Employee ID column, then the Match type well put 0. 
+-Now back to the index function, we just put the argument for the row_num. We actually do NOT need to put anything in the Column_num argument since the array only has one column of data anyways.
+-Well type: "=INDEX('INDEX MATCH Master Emp List'!$C$1:$C$38,MATCH(B4,'INDEX MATCH Master Emp List'!$D$1:$D$38,0))".
+
+Lecture 137: Microsoft Excel INDEX() Function and MATCH() Function Combined PART 2
+-We can look at one more example where the INDEX() and MATCH() are used.
+-We are now back to the "VLOOKUP Function" and "Master Emp List" Worksheets. 
+-In these sheets, we used the VLOOKUP() functions to get the data for each row. BUT remember the one arguement in the VLOOKUP() was "Column Number". We just wrote "3". This is a static number. If we drag this cell to the next one to try and autofill the table, it doesnt work. We have to manually go back and replace the "3" with the column number. This is where INDEX&MATCH really shines.
+-We can complete the entire table in one formula.
+-Note, we deleted the whole table except the first column with the IDs in the VLOOKUP Function sheet.
+-Well start with "=INDEX(". For array, well grab the entire list from "Master Emp List". Well make this an absolute range.
+-For Row_num, we dont know what it is. Well type MATCH(), then in Lookup_value, well type the ID (from cell B3). We want to lock the column but now the row (so write $B3). In lookup_array, well grab the column for the EMP IDs and lock them. For match type, well put 0.
+-Now we need to put something column_num. We didnt use this one last time because our array was just a column. Now we have a whole list.
+-Well use the match function again here. Now for lookup_value, we select the cell with the Header for Last name. We will lock the row number but not the column since we want to drag this about the columns (so we write C$2). For Lookup_array well grab the whole first row (with all the headers). Then for match type, well put 0.
+Altogether we type: "=IFERROR(INDEX('Master Emp List'!$A$1:$I$38,MATCH($B3,'Master Emp List'!$A$1:$A$38,0), MATCH(C$2,'Master Emp List'!$A$1:$I$1,0)), "Emp ID Not Found")".
+
+Lecture 138: Creating a Dynamic HLOOKUP() with the MATCH() Function
+-NOTE: We are back in the sheet titled: "HLOOKUP Function".
+-HLOOKUP() has one argument that tends to be static, so you cant just drag it down to autofill the table.
+-When we put the row_index_num, we just put "2", but this is not the best.
+-We want to be able to make the formula once and automatically finds everything correctly. 
+-Well delete the cells and keep the first one. In the formula, we wrote "2", lets remove that and use the MATCH() function. We want the contents of A5 cell which has the text "Warehouse 1 Inventory". 
+-We do have a small problem here. In the Master Inventory List, they write just "Warehouse 1", but in our list, we have it written as "Warehouse 1 Inventory". To fix this, well use the LEFT() function, which takes the text in a cell, and uses x characters from the left side. So well type "LEFT(A5, 11)", to say we want the text from A5, but only the first 11 characters on the left. Well go more into this function later.
+-So this is out lookup_value in the match function. Now we need lookup_array. Well go to master inventory list and grab A2 to A5 absolutely. Finally put 0 for exact match. We are now done with the match function. All of this replaced the "2" from the HLOOKUP function originally.
+-Altogether we typed: "=HLOOKUP($B$3,'Master Inventory List'!$A$2:$G$5,MATCH(LEFT(A5, 11), 'Master Inventory List'!$A$2:$A$5),FALSE)".

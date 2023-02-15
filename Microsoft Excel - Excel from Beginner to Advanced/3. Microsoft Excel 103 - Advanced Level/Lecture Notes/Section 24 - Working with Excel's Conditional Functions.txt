@@ -1,0 +1,85 @@
+Section 24 Notes:
+
+Working with Excel Conditional Functions like IF(), AND(), COUNTIF(), SUMIF(), etc. Note we are looking at the worksheet titled: "IF Function".
+
+Lecture 122: Working with Excel Name Ranges
+-Up to this point, when we used formulas, calculations, we have been using references, specifically the column-row address.
+-Lets say we wanted to sum up a few cells in a column, we can use the normal "=sum(B2:B9)", but rather than reference it by column-row address, we can reference by using a name.
+-First, lets highlight the column of data. then go to the "Name Box". Currently, it will show the cell number "B5". We can now re-name it to what we want.
+-Lets highlight week 1 data, call this column of data "Week_1". Now we can sum this by using the name reference. Type: "=sum(week_1)".
+
+Lecture 123: Advantages and Disadvantages of Excel Name Ranges
+-Name range is pretty slick, no more need to column-row address.
+-Some Advantages:
+	-By giving a range/cell a name, we give it some context. It is not just cells B2 to B9, this is week 1 data.
+	-We can use this to name a whole table of data and combine this with the VLOOKUP() formulas which we will see later.
+	-We can use these names to navigate the data. We can go to any blank cell, go to the name box and look at the drop down, we can see the name and click on it, it will take us to that set of data.
+-Some Disadvantages:
+	-We talked about relative references and absolute references earlier in the course. A name range is essentiallY an absolute reference. So if we needed the sum of week 2 and 3, we cannot drag the formula to other cells.
+
+Lecture 124: Editing an Excel Name Range
+- We created name ranges, but how to I make edits to it? What if I need to include more/less cells? What if I want to change the name? Where can I find all the name ranges in a workbook?
+-To edit a name range, go to formulas tab, go to section called "Defined Names", then click on "Name Manager".
+-Here you can delete name ranges, change the range of cells, etc.
+
+Lecture 125: Using Excel's IF() Function
+-For each sales person, we want to know if they met their sales goal. In the list of blank cells for "Was goal met?" we will use these cells to find this.
+-If the sales person met the goal, we want to input "Yes" or "No" into the column. How can we do this for 1000+ records? We use a function and use the drag tool.
+-Well go to the "Formulas" tab, then click on "Logical" and find the IF() function.
+It has 3 arguments: Logical_test (the condition, what we want to know), Value_if_true (what should appear in the cell if it is true?) and Value_if_false (what should appear in the cell if it is false?).
+-For logical test, well type: "f5 >= I2" where the sales goal value is in cell I2.
+-In Value_if_true, well write "Yes" and in Value_if_false, well type "No".
+
+Lecture 126: Excel's IF() Function with a Name Range
+-In the last lecture, we used the IF() function using the cell reference. "=IF(F5>=I2, "YES", "NO").
+-If we use the drag tool to fill in the rest of the table, we see we get incorrect results because when we look at the formula, it is no longer using cell I2, it is now using I3, which is blank. We need I2 to be an absolute reference.
+-We could edit the formula and change "I2" to "$I$2". This works.
+-Another option is to name the I2 cell and use that name in the formula. 
+-Type now instead: "=IF(F5>=Goal,"YES","NO")".
+
+Lecture 127: Nesting Functions with Excel
+-Lets take the IF() function to another level. We will place a function in another function.
+-Scenario: We just finished doing the conditional IF() function for finding if the goal was met. We has a test with True or False. What if now we have multiple tests and we need all of these to be true to return "YES"? With the default IF() function, we can only use one test.
+-In our context, lets say we are deciding if a salesperson gets a bonus. They have to have met the monthly sales goal, and they have to have sold more than $8k each week for 4 weeks. So we have now 5 tests we need to run to find out if they met the bonus.
+-We are going to display this as 2 tests though. We are introducing now the AND() function.
+-Look at an empty cell and lets look at the AND() function. Type "=AND(" then click the "fx" button so we can see the arguments.
+-This function checks if all arguments are true and if so, it returns "TRUE". So we can input all our 5 tests.
+-For the arguments, Logical1: well put, "H5 = "YES"", then for Logical2 to Logical5, well type: "B5/C5/D5/E5 >= 8000". This indicates each argument now division.
+-This works and returns true or false. But now what if we had 52 weeks. We dont want to type out 52 Logical conditions in the AND() function. 
+-Now in the AND() function, well use the condition for if they met the monthly goal, but now for Logical2, we will use the MIN() function. We will write: "MIN(B5:E5) >= 8000". This tells us that the if the minimum of each week is less than 8000. We have incorporated each week into one line.
+-We have just seen Nesting. We nested the MIN() function with the AND() function.
+
+Lecture 128: Nesting Excel's AND() Function within the IF() Function
+-We have just used the AND() function. If all arguments are true, return true but if one is false, then return false.
+-We can now update the table, specifically the "Bonus Status" column.
+-We are now going to nest the AND() in the logical test argument of the IF() function.
+-Type in the cell "=IF(" and click the function button. In the Logical_test argument, well type "AND(" and click the function button again. We get the window for the AND function. Type the arguments there. Then we click on the IF() again to type the returns.
+-The cell will look like: "=IF(AND(H5="YES",MIN(B5:E5) >= 8000),"BONUS","NO BONUS")".
+
+Lecture 129: Using Excel's COUNTIF() Function
+-We have the IF() function. Now look at another type of IF(), but incorporate Count.
+-We just found if each salesperson got a bonus, but now we want to be able to count the number of people who got a bonus.
+-Essentially we want Excel to look at our list and say, "If it says YES, then count it".
+In a blank cell well type "=COUNTIF()" then click the function button. There are 2 arguments: range (where do you want to count: can put cell range or name range) and criteria (what is it we want to count: We want to count how many YES's there are).
+-Well type: "=COUNTIF(H5:H9, "YES")".
+
+Lecture 130: Using Excel's SUMIF() Function
+-NOTE: We are now in the worksheet titled: "SUMIF Function"
+-We saw the IF() and COUNTIF() functions. Now we want to combine the sum function. "Sum this if it is true".
+-We have a list of sales for different stores and skus for each month.
+-We want to sum the total number of units sold at a specific store and sum the sales.
+-We will use "=SUMIF(" then click function button.
+-There are 3 arguments: range (range of cells: in our case is the store number column), criteria (what do we want to search for: in our case we care about store #3000), and sum_range (range we want to sum: in our case this is the units sold column or the sales column).
+-In the cell where we want to sum the units, well type: "=SUMIF(B3:B272,G3,E3:E272)".
+-Really useful and so short. We didnt have to sort the list at all. And, we can easily update this if we wanted to look at a different store number. Really easy to do.
+-Lets do the same thing for the sales. and we can do these sums not by store number but by specific skus.
+
+Lecture 131: Using Excel's IFERROR() Function
+-NOTE: We are now on the worksheet titled: "VLOOKUP Function".
+-We want to look at one more IF function, which is highly connected to the next section on LOOKUP functions.
+-We want to look at the IFERROR() function.
+-We have now a list of employee IDs and names. Note that the names are placed in the list by using the VLOOKUP() function from the next worksheet. It looks at the column of IDs from the next worksheet and places their name in this worksheet. 
+-What is the VLOOKUP() returns an error, like the wrong name. Or if I supply the wrong ID, the VLOOKUP() will return an error.
+-We want to do is if the VLOOKUP() returns an error, we want to output something else. Like a message saying "No employee ID found".
+-In the formula bar, where the VLOOKUP() is written. We want to nest the VLOOKUP function in the IFERROR() function.
+-We can type: "=IFERROR(VLOOKUP($B3,'Master Emp List'!$A$1:$I$38,3,FALSE), "EMP ID Not Found")", where the value argument is the VLOOKUP stuff and in the argument "value_if_error", well type our message.
