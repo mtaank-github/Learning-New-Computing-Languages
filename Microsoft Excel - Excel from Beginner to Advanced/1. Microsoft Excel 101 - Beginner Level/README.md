@@ -3,16 +3,6 @@
 In this part of the course, we mainly looked at the fundamentals of Excel and its interface. 
 
 We started from scratch with a "**Monthly Budget**" spreadsheet. We created a monthly budget for ourselves by inputting our own data into the spreadsheet, then lecture by lecture, we updated the spreadsheet.
-
-We learned the following skills:
-  - Editing Text Formulas
-  - Cell referencing
-  - Basic Excel Functions
-  - Modifying a worksheet
-  - Formatting a worksheet
-  - Inserting images and creating charts
-  - Printing worksheets
-  - Excel Templates
   
 Going through the lectures, some of the main skills I picked up included:
   - Entering and Editing Text and Formulas
