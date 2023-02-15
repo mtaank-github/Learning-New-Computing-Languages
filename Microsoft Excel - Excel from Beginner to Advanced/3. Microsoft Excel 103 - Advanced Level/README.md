@@ -20,5 +20,7 @@ Going through the lectures, some of the main skills I picked up included:
   - Text-based functions including LEFT(), RIGHT(), MID(), SEARCH(), CONCATENATE() and LEN()
   - Auditing an Excel Worksheet
   - How to Protect an Excel Worksheets and Workbooks.
+  
+This part of the course really covered some more involved areas of Excel. It was beneficial to be able to do the work myself on my own spreadsheet to get some working experience with these different types of datasets.
 
 In the next part of the course (Macros and VBAs), we start looking at even more advanced level content within Excel.
