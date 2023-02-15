@@ -9,6 +9,7 @@ We utilized a base workbook (see file titled: "Excel103Exercises.xlsx"). This wo
   - Order Information
   - Hiring Information
   - Multiple lists with currency values
+
 All of this was provided by the Udemy course.
 
 As I went through the lectures, this workbook was updated following along with the instructor. All of the updates were done by me.
