@@ -1,0 +1,28 @@
+Section 28 Notes:
+
+Protecting Excel worksheet and books.
+
+Lecture 147: Protecting Specific Cells in a Worksheet
+-We are looking at the Worksheet titled: "Worksheet Protection"
+-We spent a lot of time working in excel, but now we want to share the excel document. The concern is that we dont want other people changing some content in the worksheet. Simple steps but they are hidden.
+-Think like we dont want people changing the formulas, the formatting, titles, but we want people to change only the entered data. 
+-By default, all cells in an excel worksheet has a property called "LOCKED". And this property is turned ON. But how can it be locked if I can edit them? They are LOCKED, but not PROTECTED. We need to tell it to protect it.
+-If we just clicked Protect worksheet, you could not edit anywhere. We want to define an area where we do not protect. So remove the lock from these cells.
+-Well select the cells we want people to be able to change and go to Font section. Click the little right arrow in the corner of this section and open font settings. Well go to the protection tab and uncheck "Locked". We removed the padlock off of these cells.
+-In the "Review" tab, the section "Changes", click on "Protect Sheet". We can set a password (optional) I set the password as "password". 
+-Below there is a checklist. Whatever is checked is what another user can do to your sheet. If it is checked, they CAN do this stuff.
+-Well click OK and we have now protected our sheet. If we click on a cell and try to change it, if it was locked when we protected, well get a message indicating it is protected.
+-For us, as the developer of this sheet, want to unprotect the sheet to modify it. The button that said "Protect sheet" now says "Unprotect Sheet", we click this and type our password.
+
+Lecture 148: Protecting the Structure of a Workbook
+-Now we want to show how to protect an entire workbook. Not just the contents, but the whole structure.
+-Observe that in a worksheet we have a formula that references another worksheet. Well what if someone renames that worksheet or deletes it. What will happen to our formula that referenced it?
+-In the same section in the Review tab, there is a button called "Protect Workbook". We have 2 options, "Structure" and "Windows". We only use Structures. We will check this box for Structures and type a password. 
+-We have now protected the workbook structure. Try to rename a worksheet, you will get a message saying you cannot because it is protected.
+-To reverse the process, for example we want to add new worksheets, etc., click this same button to unprotect it, but remember the password.
+
+Lecture 149: Adding a Workbook Password
+-What if we now want to share our Excel document but only want certain people to see it. We want to add a password to even open the workbook.
+-Go to the File Tab, and click on Info Section and click "Protect Workbook". From here we will click "Encrypt wuth Password". Set a password and done. The workbook is protected.
+-Now close the excel document and re-open it. See that to open this workbook, we need to type our password.
+-To remove the password, click on "Encrypt with Password" and delete this. Now you no longer need a password to access the workbook.
