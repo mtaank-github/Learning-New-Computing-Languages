@@ -1,0 +1,41 @@
+Section 26 Notes:
+
+Working with Excels Text Based Functions.
+
+Lecture 139: Using Excel's LEFT(), RIGHT() and MID() Functions
+-We are looking at the worksheet titled :"LEFT RIGHT MID Functions".
+-We have a set of data for a SKU with SKU number, product name and Retail price. Notice in the SKU number, it contains information. The first 3 characters are the Supplier ID, the next 3 characters are the Part Number and the last characters are the Product code.
+-We want to be able to separate all this information.
+-These function (can tell by their names) are positional functions. We want to grab info from the left, right or middle of that text.
+-In the formulas tab, we can click on "Text" and select LEFT. This function has 2 arguments: Text (where is the text we want to look at, so the cell) and Num_chars (how many characters do we want from the left side).
+-Process is the exact same for the RIGHT() function, but now the number of characters is from the RIGHT side.
+-Now we want some info from the middle of a piece of text. Well now click the MID() funciton. This has now 3 arguments: Text (cell where the text is), Start_num (Position of the first character we want to extract FROM THE LEFT), and Num_chars (the number of characters we want to extract).
+
+Lecture 140: Using Excel's LEN() Function
+-Looking back at the same sheet, we worked with SKU numbers with a total of 8 characters (3 for Supplier ID, 3 for Part Number and 2 for Product Code).
+-Notice in one cell, the SKU number is of a different length of characters. So our LEFT, RIGHT and MID functions didnt really do the right job for this specific one.
+-In this case, the product code is now 4 characters instead of 2. We could go manually to that cell and change the function to use 4 chars instead of 2, but if we had 1000+ records, this is not doable.
+-We need to accomodate for this in our formula. We can use the LEN() function, which tells us how many characters are in a cell.
+-This function only needs 1 argument (the text, what cell is the text in).
+-We use function to find the length of the SKU numbers. 
+-We can set up now a new formula using this LEN() function to generate the Product code. We know the first 6 characters are taken, so we need the remaining ones on the right.
+-We type: "=IF(LEN(A3)=8,RIGHT(A3,2),RIGHT(A3,LEN(A3)-6))".
+
+Lecture 141: Using Excel's SEARCH() Function
+-Note we are in the sheet titled: "SEARCH Function". 
+-We have a list of Full Names, and we want to separate them into First names and Last names. We want to split one column into 2 columns.
+-Well go to First name column, could we use the LEFT, RIGHT function to do this? Yes we could, but we can only do this once per name. Each person has a different length of name.
+-SEARCH() Function allows you to search a string (including spaces) for specific characters. We want to search for the space that separates the first and last name.
+-We are still going to use LEFT function to get the first name, but in the Num_chars argument, well use the SEARCH function.
+-Note that the SEARCH function has 3 arguments: Find_text (What character do we want to find? For space well put just " "), Within_text (the cell where to search it) and Start_Num (What position in the string do we want to start at? We can leave this blank to say we want to start at character 1).
+-Well type: "=LEFT(A2, SEARCH(" ",A2))".
+-To get the last name, it is not just as simple as replacing LEFT with RIGHT. The search reads from left to right, but our names are found on the right we want to read from right to left, so this wont work. We can introduce another function here.
+-We can use the Len() function. In num_chars, well use Len(A2) and subtract the search function, which returns the position of the space. 
+-Well now type: "=RIGHT(A2,LEN(A2)-SEARCH(" ",A2))".
+
+Lecture 142: Using Excel's CONCATENATE() Function
+-We are now in the sheet titled: "CONCATENATE Function".
+-What if now we have two columns for first and last name, but want to now combine them into one column called Full name.
+-This function has 2(Default, could have many) arguments: Text1 and Text2, where we select the cell with the text we want to combine.
+-Note We cannot just put both names there. We need a space. So in Text1, we put first name, in Text2, well put the " " to represent a space, then in Text3, we put the last name.
+-We type: "=CONCATENATE(C4," ",B4)".
