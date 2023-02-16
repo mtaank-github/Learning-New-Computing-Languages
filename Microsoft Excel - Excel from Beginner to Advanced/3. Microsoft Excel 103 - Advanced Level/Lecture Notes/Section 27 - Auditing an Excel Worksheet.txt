@@ -1,0 +1,29 @@
+Section 27 Notes:
+
+Auditing an Excel Worksheet.
+
+Lecture 143: Tracing Precedents in Excel Formulas
+-We are in the worksheet titled: "Formula Auditing".
+-Excel is full of calculations and functions. Very powerful tool. But no matter how careful you are, you will run into errors. We can audit this.
+-Excellent tool to use if you get a set of data with calculations from someone else so we can see what each calculation is doing what formulas its using and what will happen if I change something.
+-In some cells, we see the values, but it is not right away obvious which formulas or cells it uses. We want to be able to trace what cells are fed into this formula.
+-Click into H5 and look at formulas tab and see section "Formula Auditing" and click on "Trace Precedents". See that it draws some arrows showing which cells it uses.
+
+Lecture 144: Tracing Dependents in Excel Formulas
+-There is now a flip side to trace precedents, we can trace dependents of the formula. 
+-Same tab and section but now click the button "Trace Dependents".
+-This tells us which cells depend on the selected cell. It draws the arrows showing which cells use this cell.
+
+Lecture 145: Working with the Watch Window
+-We are now in the sheet titled: "Watch Window".
+-In working with multiple worksheets where calculations span across multiple worksheet. We need a way to keep an eye on one worksheets while modifying another worksheet.
+-Well see this cell B2 is referencing another worksheet. We want to keep an eye of this value while changing the referenced worksheet.
+-In the formula auditing section there is a button for "watch window". Click on this. The window opens. We can click "Add Watch" and we can tag a cell that we want to watch. Now in this window, we see the worksheet its in, the position, and the value.
+-Now if we go to another worksheet, the window stays with us. If we make a change to the referenced worksheet, we dont have to switch back to the other sheet, the number is updated live in the watch window.
+
+Lecture 146: Showing Formulas
+-Another nice feature is Show Formulas.
+-If we wanted to make sure all the formulas are correct, we could click every cell to make sure its right, but that is tedious. 
+-In the formulas tab, Formula Auditing section, we can click on "Show Formulas". 
+-This alters the worksheet temporarily to show the cells with the formulas in them and not the values.
+-This way we can scan the formulas much easier than manually clicking each cell to check the formulas.
