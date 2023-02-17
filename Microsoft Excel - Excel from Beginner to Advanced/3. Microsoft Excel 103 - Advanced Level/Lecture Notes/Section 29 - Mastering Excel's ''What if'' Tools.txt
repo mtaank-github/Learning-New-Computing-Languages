@@ -1,0 +1,43 @@
+Section 29 Notes:
+
+Mastering Excel's "What if?" Tools
+
+Lecture 150: Working with Excel's Goal Seek Tool
+-We are in the sheet titled: "Goal Seek"
+-Goal Seek falls into a category called "What if Analysis"
+-In the Data tab, Forecast section click on "What-if Analysis". There is a handful of lesser-known features that are quite powerful.
+-In this sheet, we have a mortgage amount an interest rate and a term in months. We want to be able to find the payments. We can use a function, the PMT function to do this.
+-We can be able to find a way to adjust that current payment to fit our budget. Rather than trying to adjust the quantities manually, we can get Excel to do it for us.
+-Go to cell D3 and well set up a calculation to find the Payments. In the Formulas tab, click on "Financial" and click on PMT().
+-This takes in 5 arguments, only 3 are required: Rate (put the interest rate, since our term is in months, take the per annum rate and divide by 12), Nper (The number of payments) and PV (The Present Value, this is our mortgage amount).
+-We get the monthly payments. What if now we want to get the payments down to a lower number, what can we do? We can try changing the mortgage amount, or change the number of months or change the interest rate, but doing this manually is hard to get within your budget accurately. We can use Goal Seek to do this.
+-Select the cell of what we want to change. Note we want our payments to go from 1700 to 1100. 
+-In the Data tab, Forecast section click on "What-if Analysis", then click "Goal Seek". This asks us the Set_cell (Which cell do we want to want to change), To_value (what do we want to change this to?) and By_changing_cell (What do we want to change to be able to get the payments to this desired amount?). 
+-In our case, lets get payments down to 1100 from 1700 by changing the term. This tool will optimize this term to get our payments down.
+
+Lecture 151: Working with Excel's Solver Tool
+-We are in the sheet titled: "Solver"
+-One limitation with Goal Seek is that we can only change one parameter. What if we wanted to find the payment by changing mortgage amount and interest rate. We can do this type of optimization using the Solver tool.
+-We now have a new situation. We have 2 tables: One with Plant information and one with Shipping Information. We want to be able to minimize the Shipping amount, but to do this, there are some constraints for each Plant.
+-We first need to activate the Solver tool. Go to file, Options, and Add-ins and find "Solver Add-in". We need to activate this.
+-Open up the Solver window. Our objective is that we want to take the total shipping cost and minimize it. To do this, we want to be able to change a few cells. We want to change the info for each plant which is the range B5:E7. But this isnt enough, we now need to incorporate the constraints.
+-Click "Add" then set up each constraint. These are given in the Excel document so just add these in.
+-Click Solve and see if the solver can find a solution.
+
+Lecture 152: Building Effective Data Tables in Excel
+-Note we are now in the sheet titled: "Data Tables".
+-Through the use of a Data table, we can interject alternative values into a calculation without having to recreate the calculation.
+-We have a table with similar mortgage amount, interest rate and term. We have another table of different interest rates. We want to find the payments for each different interest rate.
+-Well type the formula for the initial interest rate of 8% manually in the first row of the table beside the header. Ok now we can turn this into a data table.
+-Highlight the whole table, then click on "What-if Analysis" from the Data tab and click on "Data_Table".
+-We see it asks for "Row_input_Cell" and Column_input_cell. We want to use the "Column input cell" area and input the cell with the 8% from the above table, and thats it. We saw that our formula for the first payment used the 8% from the other table. So now we know that in this data table, we are calculating the alternatives to that one.
+
+Lecture 153: Creating Scenarios in Excel
+-We are now in the sheet titled: "Scenarios".
+-We have 2 tables, one is a table of sales values for each quarter for each region and the other is a table for predicted sales growth percentages. 
+-In the first table, we see that Q1 has manually entered values, but in the next column, it uses a calculation using the previous quarter number and the growth percentage for each region. Each of these regions has a different predicted growth percentage, so these are different scenarios.
+-We are able to create and save different scenarios. For example, we want a best case scenario where North Sales growth is 5%. Now we get all different values for North. Now if we want to see the worst case, and this 5% is now 1%, we re-update the table, but we lost the values for best case.
+-Scenario manager allows you to create different scenarios and toggle through them.
+-Well select the second table of the percentages we want to change. Then click the "What-if Analysis" and now click Scenario Manager.
+-We currently have no scenarios, so we can add one. Well create one called "Default" where we leave the numbers alone dont change anything. Well make another one, lets call it "Best Case" and change the values of each cell to whatever you want. Well just use random numbers, but this usually uses more informative decisions. Well also do a Worst case and click ok.
+-Now we can show the different scenarios. The scenario manager window stays open. We can click on a different scenario, and click "Show", now in the worksheet the tables update with the new scenario. We can switch between different scenarios pretty easily.
