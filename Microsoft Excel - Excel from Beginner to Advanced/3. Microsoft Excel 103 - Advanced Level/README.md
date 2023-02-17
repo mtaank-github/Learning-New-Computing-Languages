@@ -22,7 +22,7 @@ Going through the lectures, some of the main skills I picked up included:
   - Text-based functions including **LEFT()**, **RIGHT()**, **MID()**, **SEARCH()**, **CONCATENATE()** and **LEN()**
   - Auditing an Excel Worksheet
   - How to Protect an Excel Worksheets and Workbooks.
-  - Using Excel's "What-if" Tools including **Goal Seek** and **Solver**
+  - Using Excel's "What-if" Tools including **Goal Seek**, **Solver**, **Data Tables** and **Scenario Manager**
   - Automating Repetitive Tasks in Excel with **Macros**
   
 This part of the course really covered some more involved areas of Excel. It was beneficial to be able to do the work myself on my own spreadsheet to get some working experience with these different types of datasets.
