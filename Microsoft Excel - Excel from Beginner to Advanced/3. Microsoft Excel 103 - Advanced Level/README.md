@@ -2,7 +2,7 @@
 
 In this part of the course, we mainly looked at the more advanced functions and areas of Excel and its interface.
 
-We utilized a base workbook (see file titled: "Excel103Exercises.xlsx"). This workbook contained numerous worksheets that contained:
+We utilized a base workbook (see file titled: "Excel103-AdvancedExercises.xlsx"). This workbook contained numerous worksheets that contained:
   - Sales Data
   - Employee Records
   - Customer Information
