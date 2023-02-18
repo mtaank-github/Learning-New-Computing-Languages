@@ -1,0 +1,95 @@
+Intro to Excel VBA Concepts:
+-VBA = Visual Basic for Applications
+-VBA is an Object-Oriented programming Language.
+-Excel and Microsoft Office Suite is full of "Objects". These include workbooks, worksheets, cells, range of cells, charts, PivotTable, Slicers, etc.
+-Note that a range of cells or just a single cell is an object.
+-By getting access to that object, we can manipulate it. We get access to it through its properties. in VBA. Some properties of a cell include Address, Column, Row, Font, etc.
+-A Method then is things that the object can do. We can copy, cut, delete a range of cells or an object.
+-VBA is stored in Modules. In the VBE, we can create VBA procedures. The most common type of procedure is the "Sub-Procedure", which just runs the code what we want to do. 
+-Basically, we want to get access to the object, then we get its properties and we can modify things.
+
+Intro to Excel VBA Object Oriented Programming Concepts:
+-Excel is a collection of objects.
+-VBA allows users to communicate/manipulate Excel Objects.
+-In the code, we can get access to the properties of objects by using ".". For example, "Activeworkbook.ActiveSheet.Name = Sheet1".
+-In this code, We access the workbook, then we access the worksheet through .ActiveSheet. Then we get access to its Name property through ".Name". Then to assign a value to this property, we use the equal sign.
+
+The Visual Basic Editor (VBE):
+-Lets open up a blank Excel document. To open Visual Basic Editor (VBE), go to Developer Tab, and click on "Visual Basic" button to open up thie VBE in a new window.
+-At the top of the screen, we have the menu bar. 
+-Below this, we have the Visual Basic Tool bar with the run button, save button, etc.
+-Then, we have some panels. We have the "Project Panel" (shows the contents of the workbook), "Properties Panel" (shows the properties of the objects) and the "Immediate Window".
+-If we are missing these panels, go to View and select the panel you want to open.
+
+Introduction to the Excel VBA Immediate Window:
+-If you type some code in the immediate window, it will run the code right away. We dont have to create a whole module or procedure, we can see immediately.
+-Lets look at objects. Lets write: "ActiveWorkbook." Stop at the dot and see there is a list of the properties that show up. The icon of a green brick is the Methods - things the object can do, and the icon of a finger pointing is the properties that make up this object.
+-If we want to look at the name of the workbook, well type: "ActiveWorkbook.Name". We get an error when we run this.
+-In the immediate window, we need to start the line with a question mark. If we want to return a value from the system in the immediate window we need to do this. We are questioning the application and getting a value back.
+-This is specific to the immediate window. We do not need this in the Modules/Procedures.
+-Lets type: "?AcitveWorkbook.Name" and click enter, it returns the name "Book1".
+-Note, the lists that pop up after the dot do not always show up. 
+-To get the name of the active worksheet (the worksheet we are currently on), we would type: "?ActiveWorkbook.ActiveWorksheet.Name", and we get back the name "Sheet1".
+-What if we wanted to change the name of the workbook/sheet. Well Type the code to access the name, but now well add an equal sign to tell it we want to assign a value to this property.
+-Do not need the "?" now since we are not returning a value. Well type: "ActiveWorkbook.ActiveSheet.Name = "Weekly Report". Notice in the Excel file, that the sheet name changed.
+-Now, Lets try and access a range on the excel spreadsheet. Well use "ActiveSheet.Range()". In the parentheses, well put in a cell or cell range and we can assign values by accessing its value property: "ActiveSheet.Range("A2").Value = "Hello World".
+
+Excel VBA Modules:
+-Lets start with a blank workbook again. Open VBE.
+-In the Project Panel, notice the icons that look like a computer screen (with red and blue color). These are also the left most indented. These are called "Projects". Right now we see the "Solver" project and a "VBAProject (Book1)" project. Solver is there because we activated it in our Excel. We can ignore this.
+-VBAProject (Book1) is in reference to our workbook we just opened. All code we do will affect that specific book.
+-This project has some hierarchy to it. The next level there is a folder called "Microsoft Excel Objects" and inside this, we have a reference to the worksheet we have open and the whole workbook (Book1).
+-We need a place to store our procedures. These are stored inside of "Modules". So we need to create a new module. This will be the same level as "Microsoft Excel Objects". 
+-Click Insert then click Module. And it makes a new folder called "Modules" and there is a module in there called "Module 1".
+-Now we have a place to write our VBA procedures for this specific workbook.
+
+Creating an Excel VBA Procedure:
+-We have 3 types of procedures. For this course, we will focus on "Sub-Procedures". This just runs your code and when its done, its done.
+-To create a procedure, click into Module 1. Click Insert and Procedure. The window opens and we need to fill in a Name, Type (we will use Sub for this), and Scope (tells where this procedure can be used).
+-Other types of Procedures:
+	-Sub: This just runs your code. Runs top to bottom and when done, the procedure is done.
+	-Function: We have all these built-in functions in Excel. These are like Sub-procedures, but the difference is that these procedures do some tasks and RETURN values back.
+	-Property: We can create our own properties which means we can create our own objects.
+-Now in the Module window we get the base code, the start and end. All of our code goes in between these 2 lines.
+
+Adding Code to a VBA Procedure:
+-NOTE: When we are writing code, we are going to write in new lines. Lets make this easy to read by click "tab" to have nice spacing.
+-Lets say I want to change the value of cell A1. We say earlier, we call the ActiveSheet object and the Range object. Then we want to access its Value property using the ".". 
+-Lets type: "ActiveSheet.Range("A1").Value = "Hello World"".
+-Note that this does not automatically update in the excel file. We need to now RUN the procedure.
+-To run this, we could create a button like we did with macros, we could set up a shortcut key, or we can run it directly in VBE.
+-In the Toolbar, see there is a "Run" button looks like a green Play button. Click this and it will run the procedure and the excel worksheet was updated.
+
+Including Excel VBA Comments:
+-An importing programming concept in general is adding comments. We leave notes so we know what each piece of code is doing. It makes life easier. 
+-In Visual Basic, we can make comments by using "'". A single quotation mark at the beginning of the line. Code before the "'" in the same line will still be read, so make sure comments come after the "'".
+
+Excel VBA MSGBOX Function:
+-What we have spoken about up to this point are Visible objects. There are some that are not obvious. They are not default. 
+-The object we want to see is the "Message Box". This is already built into Excel, but to see it we need to call it. This allows us to give a message/prompt. For example, if they run into an error we can tell them what went wrong. Or when we run a macro, we can show a message saying this is what the macro will do.
+-In the same Module, well go to a new line. type: "msgbox(". From here, we see the arguments. We have 5 arguments, but only the first is mandatory. 
+-In the Prompt argument, we put the message we want to relay. Well type "Hello World" and run the code.
+-Lets say in the message box, we want to give the contents of cell A1. Well call the object: "MsgBox(ActiveSheet.Range("A1").Value)".
+
+Excel VBA MSGBOX Microsoft Help Information:
+-Something we can do inside the VBE, click on MsgBox, and click F1 (Help Button), it will open up the Microsoft page about that command. Can do this for all other command/functions, etc.
+
+Understanding and Working with Excel VBA Variables:
+-Using Variables is a really efficient way of using values. Lets say we wanted to write some statements about a certain person and a certain number. Rather than re-type that name or number each time, we can call/reference a variable with that value.
+-Well make a new procedure. Go to insert and procedure, well call this one "FunWithVariables". It shows up still in Module 1 just now it is below the previous sub procedure.
+-A variable is a storage location. 
+-To define a variable, we will write: "dim userName as string"
+-"Dim" is short for dimension. We are creating space/memory to hold the value. This lets Excel know we are creating a variable.
+-"userName" is the name of the variable. This is how we call this variable.
+-"as string" is the type. What type of data is this variable going to hold.
+-We can make a variable for a numeric number as well. Same process but for the type, we write "as integer".
+-Now we can write the text we want in the message box by calling these variables.
+-No more need for hard-coding the name multiple times.
+-We want to write text to the message box. Lets write "Hello Mukesh, you are 23 years old". To this, replace the name and age with the variables.
+-When we run this it doesnt work! We need to use "&" to connect text to variables.
+-For example, the code will look like: "MsgBox ("Hello " & userName & "! You are " & userAge & " years old")".
+-Variables are really useful because if we wanted to change the name, we dont have to change it how many times it was hardcoded, we only have to change it once.
+
+Saving the Workbook with the Macro:
+-We want to save the macro we made in this workbook. Make sure to change the file extension from .xlsx to .xlsm.
+-The code is automatically saved when you save the workbook. Same if you were to click save in the VBE, it automatically saves the workbook as well.
