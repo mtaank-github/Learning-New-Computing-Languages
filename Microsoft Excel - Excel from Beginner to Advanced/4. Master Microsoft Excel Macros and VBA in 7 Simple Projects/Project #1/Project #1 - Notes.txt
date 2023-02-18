@@ -1,0 +1,61 @@
+Project #1 - Notes
+
+Motiviation:
+-We are given a set of raw data in the form of a list. We have region, expense, months, totals, etc.
+-Let's say we have another set of data idenitical to this, or we know we will be working with a dataset of this type weekly? We do not want to format the worksheet all the time. 
+-We can set up a macro to do this automatically.
+
+We will be working in the Workbook titled: InsertingAndFormattingText.xlsx.
+
+Getting Started:
+-Before setting up these macros, we will need to activate the "Developer Tab" in the Ribbon.
+-Go to any tab in the ribbon and rightclick one of them, then click "Customize the Ribbon". You can see all of the Ribbon tabs. If we check "Developer", it will now show up.
+
+Start Recording:
+-We are going to look at adding headers, formatting the list, etc.
+-Note, in this workbook, there are 3 sheets. The first sheet well record the macro. Well move to the other sheets later.
+-Go to the Developer tab, and the Code section. There is a button called "Record Macro". We now have the macro window. We give it a name, a shortcut key, storage place, and a description.
+-Once you click OK, it is now recording your every move. Anything you click on, anything you highlight, change etc. will be recorded.
+-Now lets format the list. We add headers to the columns, colors and fonts, change values to currencies.
+-When done with the recording, click "Stop Recording" in the same spot.
+
+Running the Macro
+-Now move to the next sheet titled: "RUN MACRO".
+-Even though we set up the macro in a different sheet, it can be used anywhere in this workbook.
+-Remember we set up a shortcut key. We can use this to run the macro. 
+-Click "CTRL+j" and observe the list update with the new formatting automatically.
+-We used a shortcut key, but now lets say we want to change this, or if we didnt assign one before, we want to add one. 
+-Go to Developer tab, Code section and click on "Macros". We see our Macro there. Click this and click on "Options". We can see the shortcut key and description. We can edit these here.
+
+Running the Macro with a Button
+-We are now in the sheet titled: "RUN WITH BUTTON".
+-If we set up a lot of macros, we will have a lot of shortcut keys, but we need to remember them. This can be hard if you have a lot of macros. We can set up a button, a nice interface we can click on to run the specific macro.
+-In developer tab, in the "Add-ins" section click "Insert" drop down arrow and click the top left option.
+-You are prompted to draw a box for the size of button. Now we have a window open.
+-Select the maco you want to assign to the button. NOTE: check the file name is correct. With the workbook name and macro name make sure the full name is there.
+-You can change the text on the button whatever you want. 
+-Now, click the button and it is done.
+-We can also format this button. Can we change the color and shape of it? We can use excel shapes, and assign a macro to that shape.
+-Lets go to "Insert" tab and click on "Shapes". Pick what you want and draw it. Right click on it and click "assign macro". Same process as before. 
+-Now click on the colored shape button and it works :)
+
+Adding Macros to Quick Access Toolbar
+-Right click on the quick access toolbar and click Customize.
+-In the dropdown menu, select Macros and add your macro by clicking "Add". 
+-Now you can run the macro from the QATB.
+
+Editing the VBA Recorded by the Macro Recorder
+-Lets say we want to change some things in the macro we recorded. For example, we made a mistake like a typo, or we want to remove a color, etc.
+-We can do this by looking at the Visual Basic code.
+-In the Developer tab, click on "Visual Basic". Make sure "Project Explorer" is open by clicking "View" and click "Project Explorer". We see all the sheets in this workbook on the left and there is also a folder called "Module". Double click "Module 1" and it opens up the code for our Macro.
+-The code is in order of everything we did in the recording.
+-Any steps that were not needed, like selecting random cells, you can remove this from the macro by deleting that line of code.
+-Note: We do see something important. Notice that we selected the range of cells to assign currency values. We selected C4:F17. But, what if we add more records? We add new entries in the rows below 17. The Macro is ONLY going to work on the cells C4:F17 so these will not be changed. How can we fix this? Becasue we want it all to get formatted.
+-We could manually change this in the VB code, but this is very manual. We want it to be dynamic so the Macro knows itself. 
+-We will touch on this later on.
+
+Save a Workbook with a Macro/VBA Code. 
+-To save the workbook with the macro, we need to change the file type. Cannot just save as .xlsx.
+-If you just click Save, you get an error saying your VB project wont be saved.
+-When we click SaveAs, we can change from "Excel Workbook" to "Excel Macro-Enabled Workbook", which is .xlsm file extension.
+-Now when we open and close this workbook, the Macro will be saved.
