@@ -1,0 +1,73 @@
+Building Logic with an Excel VBA IF Statement:
+-We are in the workbook titled: "ExcelVBALoops.xlsx" and the worksheet titled: "Users".
+-We have a table of users and their age. We want to be able to go through cells, check their values. In our context, we want to see if the users ages are 21 or over. If so we do something, if not we do something else.
+-Start by opening VBE. Well create a new module and a new procedure. Name this: "FunWithLogic".
+-We can write an IF statement. In the Excel document, well select the cell with the first age value. When we write our IF statement, we can refer to "ActiveCell", which is our selected cell.
+-We can write: "if ActiveCell.value >= 21 then \newline msgbox("User is 21 or over") 
+newline End if".
+-Note we are writing "If Condition, Then Action". 
+-To complete this code for the next person, we will select the next row age cell, and run the code again. Remember it is using ActiveCell. 
+-We have the condition for if they are over 21, but what if they are younger? We need an action for this case too.
+
+Including an Else Statement in the VBA IF Statement:
+-We have an action for if the logical statement is true, now we need an action when the logical condition is false.
+-We are going to use the "Else" Keyword. This line goes BEFORE the "End if" line. It comes after the action for the true case. We write "Else", then new line and write the action.
+
+Expanding the IF Logic with Multiple Elseif Statements:
+-What happens now if we need multiple conditions? We want actions for if they are under 21, 21-50, and 50+. 
+-We can include multiple conditions using "Elseif" Statement. No spaces in this. The final condition is written with "Else", but the second up to the last condition use "Elseif".
+-The Elseif statement is written just like the IF statement where we write the condition and write "Then". So it looks like this: "ElseIf ActiveCell.Value >= 21 Then".
+
+Working with Excel VBA Select Case Statements:
+-Select-Case statement. Similar idea, but the syntax to write this is different.
+-We will make a new procedure. Calll this "FunWithSelect".
+-We write "Select case ActiveCell.Value"
+-"Select Case" is similar to writing IF and the " ActiveCell.Value" as the condition.
+-Buit now, in the next line, we write "Case Is > 90". 
+-To add another case, we would in a new line write "Case 21 to 89" This is if the value is in the range of 21 to 89.
+-Finally, we write a "Case Else" to cover all other cases not included in the other cases.
+-At the end of this, we need a line to say "End Select" and this is the same indentation as the first line where we wrote "Select Case".
+-This is sort of interchangeable with If-elseif-else statements, it is a matter of preference.
+
+Working with Excel VBA Do-While Loops:
+-Right now, the way our code is written, we have to manually select each cell to run the macro. This is bad. We want to be able to run through the whole list and run the code.
+-This is done with Loops. The first one well look at is a "Do-While" loop which says "Do something While the condition is true".
+-Lets make a new procedure. Call it "FunWithDoWhileLoops".
+-We are going to see that we can call other procedures in another procedure.
+-Well start by writing "Do While ___". We want to make sure our condition allows us to go through the whole list. Notice we have 10 records with ages. We can make our condition stop when the row number is above 10.
+-We can set up a variable and start it equal to 1. In the Do-While loop well set the condition as "Do While i <= 10". 
+-Within the loop, well write the action we want it to do. We can copy the Select-Case stuff here, or we can call that procedure. We write within the loop: "FunWithLogic", just like that.
+-We have 1 more step. In the SelectCase stuff, we referenced only the ActiveCell. If we ran the code like this, it wont move to the next cells. So we need to do something to update the cell.
+-Underneath the call to the other procedure, well write: "ActiveCell.Offset(1,0).Select", which moves the selected cell down by 1 row and over 0 columns.
+-After we have written our actions, we need to update i: "i = i + 1". If we do not add this line in, i is always equal to 1 and the condition "i <= 10" is always true and therefore we are in an infinite loop. The UPDATE is very important.
+The last step is to write the line "Loop" in line with the Do While line. That is the end of the loop section of the code.
+-Now we have a problem. We had only 10 records, so in our condition, we wrote 10. What if we have 1000+? or it updates constantly? How can we make this more dynamic?
+
+Excel VBA Do-While Loop Dynamic Condition:
+-How can we make the condition more dynamic with the data. How do we know when we are at the end of the data? When we reach an empty cell. 
+-Lets modify our loop. Well get rid of the condition in the first line. 
+-Lets write "Do While ActiveCell.Value <> """. The "<>" means "NOT equal to" and we want the loop to go until the active cell value is blank, i.e., "". 
+-Now if we add some extra records, well see that the code DOES run on the new added cells.
+-The one possible error is if one of the records in the middle gets deleted. So they have no age. The code will stop there, but wont run on the records below this error. We will see this later.
+
+Working with an Excel VBA For-Each Loop:
+-For-Each Loop. We made a new Procedure. Call this "FunWithForEachLoops".
+-We spoke earlier about how Excel is an object-oriented program. Recall an object can be a cell, or a range of cells. What if we want to loop over a collection of object. We can select a range of cells and loop over them.
+-First thing is well make a variable. Well call it user and it is a Range type because we want it to hold multiple objects. So we write: "dim user as range".
+-Instead of writing Do While well write "For Each user in selection"
+-Then within the loop, we will call the same previous procedure and keep the offset cell line.
+-At the end, recall for Do-While loops we wrote "Loop". Here, we will write "Next user". That way, the loop knows the move on to the next object in the collection.
+-To run this code, we first need to select the range of cells we want to run the code on. 
+
+Working with an Excel VBA For-Next Loop:
+-One more type of loop called the "For-Next Loop".
+-Create a new procedure, call this "FunWithForNextLoop".
+-We no longer need the range variable, but we will bring back the i as integer variable, but we will use it a little differently.
+-We write "For i = 1 to 10". We want it to go through entries 1 to 10. We can make this number dynamic later.
+-Keep the same procedure reference and cell update, but now at the end of the loop, instead of "Next User" or "Loop", well write "Next i" to tell it we are done with this i value now go to the next one.
+-To make the 10 more dynamic well use a new object.
+-In the condition, well now write: "For i = 1 to ActiveSheet.usedrange.rows.count". This allows our Data to pick up on how many rows and columns have been used in this worksheet. The usedRange is looking at all the data we have entered in our spreadsheet and it will loop over all of it. 
+-We add the ".rows.count" to find out the number of records because in the condition, we need the total number of records. 
+-Finally, we also have a header row, so we want to subtract 1 from this because the headers row does not count as it does not contain information.
+Remember that we want to be selecting the first row cell when we run this code because it still uses the Active Cell.
+-So all together we write in the first line: "For i = 1 to ActiveSheet.UsedRange.Rows.Count - 1".
