@@ -1,0 +1,52 @@
+Introduction to Project #3:
+-Note we are using the file: CleaningUpData.xlsx". This contains 5 worksheets, each with data for different regions. 
+-We want to be able to Format these lists all at the same time. We can format the first list manually, then automatically format the similar lists in different worksheets. Also note, these worksheets do not need to have the same number of records. 
+-We want to make our procedures dynamic and adjust to how ever many records are provided in each sheet.
+
+Preparing to use the Macro Recorder:
+-We have 5 worksheets. 1 for recording and 4 with the actual data. We will perform the actions in the first one and use the macro to automatically update the others.
+-The recorder is very useful because we can do a lot of actions without hand-typing them, however, the code will need to be updated to account for other worksheets. Well need to make it more dynamic.
+
+Inserting the Headers:
+-We have our file open. We are in the sheet: "RECORDING".
+-We will record 2 macros. The first one will insert the row at the top and add the headers. We will use another recording to format the table.
+-It is useful to make a "Dummy" worksheet to test the macro. In case we have errors, we can fix them up by testing on dummy data.
+-We have made the recording. We inserted a new row and added the headers.
+
+Formatting the Headers:
+-Similar to the last part, now we will will record the formatting.
+-We add formatting to the headers. We want to now change the values in the list to currency values, but the other sheets may have a different size/number of records.
+-Instead of using the mouse to highlight, click into C2 (first cell with the values) and use CTRL+Shift+Down and CTRL+Shift+Right to highlight all the cells. Then click currency.
+-Our next step is to create a loop to run these 2 proc
+
+Testing the Macros:
+-We have made our 2 procedures. Before adding the loop, lets test these procedures on our test data.
+-In the sheet "Test Run Macro", run both macros. See if they work. They should do exactly what we want.
+-It worked :)
+-Last step, right now we have some VBA code and macros, so lets save this workbook as a .xlsm file to make sure we save the macros.
+
+Using Excel VBA Loop to Loop through all Worksheets:
+-Lets open up the VBA Code.
+-First thing, we no longer need the sheets for the recording or the test sheet. We can delete those and save our work.
+-We can use many types of loops here (we saw a couple), but in this scenario an easy one to use is the For-Each loop. We want to create a loop for each worksheet in the workbook. 
+-We have the worksheets object, we have a collection of worksheets that make up our workbook. So well set up a loop to loop over each worksheet in Worksheets.
+-Well start with making a variable to represent the current worksheet. "Dim ws As Worksheet".
+-The loop with start with: "For Each ws in Worksheets".
+-Within this loop, well write: "Worksheets(ws.Name).Select". This tells it to select the name of the worksheet so it knows which worksheet it is in currently. When we select the sheet, we will do our actions in that sheet.
+-As the code selects the sheet, we want to call the procedures.
+-We have the loop, we told it to go through each worksheet. It selects the worksheet does both procedures, then moves to the next worksheet same thing until it goes to all worksheets.
+
+Testing the Excel VBA Loop:
+-Now lets try and run the code. Wow it formatted all 4 sheets with the click of one button. 
+-Notice even though the lists are of different size, because we didnt select the cells with the mouse, but used the "CTRL+Shift+Down and CTRL+Shift+Right" to select.
+-This told excel to select all entries below the top row until it hit an empty cell. So this accounts for any length of list, it will select all rows until it hits an empty row.
+
+Adding Logic to an Excel VBA Loop:
+-A common question at this point: What happens if we run the procedure again? We already have the worksheets formatted, so what if we perform the macro again. 
+-Lets insert a new worksheet call it "Central Records" and copy some data to the new sheet. And well clear the formatting off of it. 
+-We added a new list. We think if we run the macro again it will fix up the new sheet. If we run this, notice that central records looks good, but all the other sheets, it repeats the steps were we inserted a row, formatted that row. So all of these sheets now have an extra header row. We want to eliminate this.
+-Lets re-run the procedure but now we only want to run it on the new one. We can solve this using some Logic. 
+-Notice in each worksheet, in Cell A1, the division is there. We can set a condition for if the division is new, then run the code. 
+-Well modify the loop just a bit. Well set a condition to check the division value in cell A1.
+-Underneath the worksheet select but before the procedure calls, well add: "If Range("A1").Value <> "Division" Then", and indent the procedure calls to be in the IF statement.
+-We run this code and observe the new sheet is formatted great, but the other sheets are also good. There is no extra row in them everything is looking good :)
