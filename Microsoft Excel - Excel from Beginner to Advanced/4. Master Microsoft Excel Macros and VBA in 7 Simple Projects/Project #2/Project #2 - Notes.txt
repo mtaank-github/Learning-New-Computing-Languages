@@ -32,8 +32,8 @@ Excel VBA InputBox:
 -This looks like: 
 	promptMsg = "How would you like to sort the list?" & vbcrlf & _
     	"1 - Sort by Division" & vbcrlf & _ 
-      "2 - Sort by Category" & vbcrlf & _
-      "3 - Sort by Total"
+        "2 - Sort by Category" & vbcrlf & _
+        "3 - Sort by Total"
 -When we end the options, we no longer need to wrap the text and a new line so we are done there. All of this shows up in the input box in new lines. 
 -Essentially, the "& vbcrlf" part is the code for new line.
 -Next step, we can add this prompt message into the inputbox() function: "sortOrder = InputBox(promptMsg, "Sort Order")"
