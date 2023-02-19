@@ -1,0 +1,70 @@
+Introduction to the Excel VBA Range.Sort Method:
+-We need to create sorting code to sort by which Category we want. To do this, we need to use the sort method. 
+-This is of the form: "expression.Sort(Key1, Order1, Key2, Order2, Key3, Order3, Header, OrderCustom, MatchCase, Orientation, SortMethod, DataOption1, DataOption2, DataOption3).
+-expression is really just the range of cells. Really a lot of these arguments are optional. We will mainly use Key1, Order1 and Header. 
+-The key is from the given range, what column are we going to sort by. So we will specify the column. The Order1 tells us how we want to sort, do we want ascending order. And Header is there we tell it that our range contains headers. Either yes or no.
+
+Creating the Excel VBA Sort Procedures for this Project:
+-We are in the file titled: "SortingRecords.xlsx". Well open VBA and make a module. Now insert a procedure, call this: "DivisionSort". 
+-We want to start by making a reference to what we want to sort. Well write: "columns("A:F").Select" to Select all of the data in these columns. 
+-Now we want to sort this, so well remove ".Select" and replace with ".Sort". Then well need to use the arguments of the sort seen above. We do this by leaving a space after sort and assign value to the argument key1.
+-To do this, we assign value using ":=". For example, well write: "columns("A:F").Sort key1:=range("A2"), ". We have now assigned a value to the first argument. We do this for order1 and header as well.
+-"Columns("A:F").Sort key1:=Range("A2"), order1:=x1Descending, Header:=x1Yes". 
+-We just need to add the "xl" to indicate this is in Excel.
+-The reference to A2 indications the first value in the column we want to sort by that is not a header.
+-Run this line and notice the list is now sorted in Descending order. We have the divisions East, North, West and South, now we chose Descending order and we see that when we run it the list starts with West, then South, then North, then East.
+
+Prompting the User for Information:
+-We have made a few procedures to sort by Division, Category and Total. Now we want to prompt the user to decide how they want to sort. We can use an Input Box. This is a box that will pop up and ask the user how they want to sort. Well then use logic to decide how to sort. "If they chose this, then sort like this".
+-Well make a new procedure called: "FunWithInputBox". 
+-First thing is we want to create a variable. This will store the input from the user. Call this "userInput".
+-Next, well write: "userInput = inputbox(" This needs a prompt (what we want to ask), then a title (Title for the box), Default value, position (x and y) and other stuff. All of these are optional except the Prompt. We are only going to use prompt and title.
+-Well write: "userInput = InputBox("What is your Favourite Colour?", "Favourite Colour")".
+-When we run this, a box pops up with the prompt in it. It also has a box for us to type in, where we answer the question. Then when we click ok, we have assigned that value (what we wrote) to the variable userInput.
+-We can see this by adding a breakpoint in the code. Click the gray area to left of that line where we define userInput. Notice the line turns red and there is a stop sign symbol. This tells the code to stop at that exact line. If we hove userInput, we see the value is nothing. If we now run the code without the breakpoint, hover the variable in the code and observe its value.
+
+Excel VBA InputBox:
+-Now we are familiar using the VBA inputbox, lets use it. Well make a new (main) procedure to prompt the user and perform some logic to determine which sort procedure we want to run. Call this: "UserSortInput".
+-Well create a variable for the user input which tell excel how they want to sort it.
+-We want to first write a message in the input box so the user knows how they want to sort. We want these options to be on new lines so we will look at this just now. "well write a variable to hold the prompt message.
+-We want to now take the message and in a new line wrap the text to a new line and provide the options for sorting. To do this, we can edit the line for the "promptMsg". 
+-We will add to the end of it, a Visual Basic built-in keyword/constant called "vbcrlf" = "Visual Basic Carriage return line feed", which allows us to wrap the text and make a new line. Finally, to wrap the text and actually write the options in a new line, well use an underscore which allows us to wrap.
+-This looks like: 
+	promptMsg = "How would you like to sort the list?" & vbcrlf & _
+    	"1 - Sort by Division" & vbcrlf & _ 
+      "2 - Sort by Category" & vbcrlf & _
+      "3 - Sort by Total"
+-When we end the options, we no longer need to wrap the text and a new line so we are done there. All of this shows up in the input box in new lines. 
+-Essentially, the "& vbcrlf" part is the code for new line.
+-Next step, we can add this prompt message into the inputbox() function: "sortOrder = InputBox(promptMsg, "Sort Order")"
+
+Building Logic into Macros:
+-We have now got the input box message done. We get an integer value from the user for how they want the list sorted. Now we need to tell Excel to run the macro corresponding to their choice. We will do this using If-Else statement.
+-Well write: "If sortorder = 1 then". Well add our condition. 
+-If sortorder is 1, we want to sort by division, so well call the "DivisionSort" macro to run.
+-Then well write "Elseif sortOrder=2 then", and call the CategorySort Macro.
+-Run this code and observe as the list gets sorted.
+
+Alerting the User of Errors:
+-Its nice we are interacting with the user, but when we do this, we need to prepare for if they type in a value that is not valid.
+-We need a condition for if the user does not type either 1,2,3. We can print out an error message.
+-Well add an Else statement at the end of the If and write an error message. We can tell them to try again. However, we need to give them an option to select Yes or No if they want to try again. 
+-In the messagebox, it has an argument about the buttons. We will use these. If we write a comma next to our prompt message, we see all the possible buttons. We want to use "vbYesNo". However, we need to make a variable for try again, and set this message box function as the value of that variable. Write like this: "tryAgain = MsgBox ("Invalid Selection: Please Try Again", vbyesno)". 
+-Now our message is not just a prompt. We now expect them to press a button. 
+-If they clicked "Yes", we want to run our procedure again and re-ask them how they want to sort. To do this, we will just call the procedure. If they selected No, don't do anything.
+-We need another Logic statement here. But we need to know the value of the Yes and No buttons. To set up the condition for the logic, we need to know the value of yes and no.
+-If we use a breakpoint at the "EndIf" line, we can run the code and observe the value of "Try again", which is Yes or No, But the actual value is: Yes=6 and No=7. The message box buttons return integer values, this is why when we defined the "tryAgain" variable as an integer.
+-So well write the If statement within the Else.
+
+Using Excel VBA Error Control Statements:
+-We solved one type of error. If they type an invalid number, we prompt them with a message. Another error is if the user does not type anything in the input box. We get a error message saying "Type Mismatch". We expected the value to be an integer. 
+-If we do the debug an run the code, we see that if it is left blank, the sortOrder variable is being assigned "0" because it is blank. 
+-This is outside of our If structure, so we can solve this using what is called "VBA Event Error Handling". In the event there is an error, we need to handle it. 
+-What do we want to happen if we get this error? We want to be able to re-run the code and re-prompt them. We want them to go the the part of the code where we called the procedure (in the Else part). 
+-To do this, we need a line at the top of the code (under the variables): "On Error GoTo errorHandler". In the area in the Else section, which is what we want to happen if we get this error, we can add a line directly above the tryAgain line, and write: "errorHandler:". 
+-This way, the code knows that oh if we get this error, we should proceed to this section of the code. And in this section of the code, we re-prompt the user to try again.
+
+Create a Button to Run the Sort Procedure and Save:
+-Weve got our code good to go now. Two more little things.
+-We want to create a button that allows the user to run the macro easily. Insert button and name it. Assign it to the macro "UserSortInput".
+-Last thing: Remember to save the file as a .xlsm to save the macro. 
