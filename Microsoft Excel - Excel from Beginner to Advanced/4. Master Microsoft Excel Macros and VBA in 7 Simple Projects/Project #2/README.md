@@ -1,1 +1,1 @@
-# Project #2 - Moving Beyond the Basics and into VBA
+# Project #2 - Interacting with the User
