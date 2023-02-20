@@ -1,0 +1,34 @@
+Introduction to Project #4:
+-In this project, we are given a list of data. It contains contains headers for a company division, category, and sales per month and well as the totals.
+-We want to be able to perform some calculations on this data. For example, an important quantity is the sum of the total sales. We can automate performing this calculation for various worksheets and varying list sizes.
+
+Start the Procedure to Automate the SUM() Function:
+-Lets start out with the procedure to calculate the total sum. In the workbook: "AutomateSumFunction.xlsx", well open up VBA and create a module and a sub procedure.
+-The problem is that we want to place the sum in the cell directly below the "Total Expenses" column, but how do we know what cell this is if the lists in each worksheet are different sizes?
+-Inside our procedure, we need to find this cell. We know one thing that is a given: The Total expense is in Column F, so we can use "Range("F2").Select" to select this column.
+-Next, we want to find the bottom of this column. In the excel window, we used a shortcut key : "CTRL+Down", this automatically goes to the bottom of the data until it finds an empty cell and stop.
+-In the VBA window, we want to take this command and use it in VBA context. Well use "Selection.end(xlDown).Select".
+
+Working with the Range Address Property:
+-We now want to create a formula to perform the sum. This formula is going to go in the cell directly below the one we selected in the last part.
+-Well make a variable called: lastCell and assign it to the ADDRESS of the active cell: "dim lastCell as String ... lastCell = activeCell.Address". 
+-Using a breakpoint at the "lastCell =" line, we run the code and see that it gets assigned the Absolute reference of the cell. So it currently has a value of "$F$23". 
+-This means that reference will never change. But if we wanted this to be relative, we would add some arguments to the Address property like: lastCell = ActiveCell.Address(False, False)". 
+-Depending on what you want you can add this. In our case will will keep this.
+
+Creating the SUM() Function in VBA:
+-Now we can create the sum formula. 
+-When we run the code, we are selecting the last cell in the column, but we want to display the sum in one cell down. We can use the Offset property to do this: "activeCell.Offset(1,0).Select".
+-We can now assign a value to this cell. Well add the sum formula here, BUT, note this is a little different than writing the sum in Excel. 
+-Instead of hardcoding the range of cells, we need it to be dynamic to update for any length of list.
+-Well write: "ActiveCell.Value = "=sum(F2:" & lastCell & ")"". This tells the sum function that the right end of the range is the value from the lastCell, which we found above.
+
+Run the Excel VBA Procedure to SUM Records:
+-We can now test this code on each of the worksheets to make sure the sum uses the correct cells. 
+-We see that it does work! When we click into each worksheet, run the macro, it calculates the sum for each list correctly.
+-We can now try to include this formula into a loop over all worksheets.
+
+Loop the SUM() Function over Multiple Worksheets:
+-Lets get the code to loop over the worksheets. Well use a For-Each loop.
+-Well make a variable for the ForEach loop to represent the current worksheet.
+-Now we can test out the code and observe that the sum has been added to all worksheets.
