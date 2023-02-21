@@ -1,0 +1,61 @@
+Introduction to Project #7:
+-This project deals with importing data from text files.
+-Sometimes, data comes to us not as an Excel file, but as a text file. In cases where we need to import multiple text files, it takes a long time to do these one by one. 
+-We can set up a macro to import all of these for us and place each dataset in individual worksheets. 
+
+Opening a Text File for Import:
+-Lets start with importing a single text file into the Excel Document.
+-Note, we are working with tab-delimited text files.
+-Lets open up Visual Basic and add a module and sub procedure.
+-Well make a variable: "Dim textFile as Workbook". This is because we want the file to directly open up in excel as a workbook.
+-We are going to introduce a key word here called "set". When you make a variable assigned as an object (in this case a workbook), we need to use "set" to be able to assign something to it. Well write: set textFile = ".
+-We want to open workbooks and use the open property. Within this, well put the path to the file (get this from File Explorer).
+Well write: "set textFile = workbooks.Open("C:\Users\mukes\Documents\Udemy Courses\Microsoft Excel - Excel from Beginner to Advanced\4. Master Microsoft Excel Macros and VBA in 7 Simple Projects\Section 42 - Project #7 - Importing Data from Text Files\Resources\April2015Sales.txt")".
+-If we run this, well see the contents of the text file in a NEW workbook.
+
+Get Data from Text File:
+-Now we want to be able to copy the contents of the text file we opened and place it in our main excel document.
+-Well go into the textfile and the first sheet, select all data and copy it. This looks like: "textFile.Sheets(1).range("A1").currentregion.copy". 
+-Now we want to go back to the original workbook, activate it and paste it.
+-It tries to close the worksheet, but it prompts you to keep the data you copied on the clipboard. For now well say no.
+
+Importing Multiple Text Files Using GetOpenFilename Method:
+-Lets make the macro more flexible. We are accessing a very specific text file. We want to allow a user to select a single/multiple text files to open up in Excel.
+-We are currently using a specific file path. Lets create a variable as an array because we want them to choose a single file or multiple arrays. Well do: "Dim openFiles() As Variant". this way the variable can be of any type.
+-In the line where we open the textfile with the path, well delete that and now replace it with an open window to allow users to choose the files themselves.
+-We need to call on Excel itself using "Application.GetOpenFilename(title:="Select File(s) to Import", multiselect:=True)"
+-Then in the line where we open files, well remove the path and use: "Set textFile = Workbooks.Open(openFiles(1))", where the 1 is the number of files.
+-When we run this, notice how it opens our file explorer and allows us to select the files directly.
+
+Creating a Loop to Read Each File:
+-Lets make this even more dynamic. 
+-When we change the "1" to "2", we are allowed to select 2 files. But when we do, it places the first file contents correctly, but the second one is pasted in the same worksheet and on a diagonal. 
+-We want to create a loop to open the files and place them on different worksheets.
+-Well use a for loop. We start with "for i=1 to " but how do we know how many files they have? Well use the "COUNTA()" function. Well write this loop as: "For i = 1 To Application.CountA(openFiles)".
+-Also, we had the "1" in the line for openFiles. Lets change this to "i" to work on the different worksheets.
+-A little issue here. It is only pasting the file contents on the same worksheet. Because of this, the data is getting overwritten. 
+
+Adding a New Sheet for Imported Data:
+-We want to paste the content now on new worksheets. We can just add a new worksheet for every text file. In the loop, before we paste, well add a new sheet: "Workbooks(1).Worksheets.Add".
+
+Clear the Clipboard:
+-We want to be able to name the worksheet we add each time. Also, we get prompted if we want to keep data on the clipboard. We want to get rid of that.
+-To rename each workbook, well write: "ActiveSheet.Name = textFile.Name".
+-To clear the clipboard after we paste, write: "Application.CutCopyMode = False".
+
+Working with the ScreenUpdating Property:
+-One problem with this program is we are getting screenflicker. When we run this, we see the files opening and closing. Lets say we select a lot of files, it will flicker a lot.
+-To turn this off, well write, before the loop, "Application.ScreenUpdating = False". Then after the loop, well turn it back on: "Application.ScreenUpdating = True".
+
+Creating Reusable Code with a VBA Function:
+-We want to be able to take a piece of this code, create a new procedure and make a call to this procedure. We can reuse the code from here in multiple situations.
+-For example, the line we use where we open files, this can be used in lots of other situations. Well copy this. 
+-Now well place this in a new procedure, but NOT a subprocedure. Well use a FUNCTION Procedure. That way when you run the procedure it returns a value to us.
+-Well make a new procedure that prompts a user to open any files on their computer.
+-Well insert a function procedure, call it: "GetFiles".
+-We set the Procedure name equal to the open Files line from the other procedure: 
+	Public Function GetFiles() As Variant
+		GetFiles = Application.GetOpenFilename(Title:="Select File(s) to Import", MultiSelect:=True) 		
+	End Function
+-We need to add "as Variant" to the function line since it is grabbing some files but we do not know of what type.
+-This function does one thing really well. Lets replace the line in our subprocedure with the call to the function we just created.
