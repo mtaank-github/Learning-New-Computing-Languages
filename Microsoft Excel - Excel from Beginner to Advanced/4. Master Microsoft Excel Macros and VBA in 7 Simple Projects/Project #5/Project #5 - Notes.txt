@@ -1,0 +1,50 @@
+Introduction to Project #5:
+-Lets bring what we completed in the last projects together. We have a set of raw data for the 4 divisions of the company and their sales reports for the first quarter. We want to prepare a quarterly report of all the sales data. 
+-We want to format the lists, sum the values and combine the worksheet data for each division into one long list.
+
+Creating the Final Report Excel VBA Loop:
+-In the worksheet, if we open up the VBA code, notice we already included our procedures from the last projects for formatting and including headers as well as for calculating the sum.
+-We want to create a loop to perform each procedure on each worksheet.
+-Starting in the East records (First sheet), well create a new procedure, call it: "LoopQuarterlyReport".
+-For this task, we will use the For-Each loop. 
+-Well use the same code to select the sheets. Then within the loop, well call the other procedures.
+-We use the order: InsertHeaders, FormatHeaders, AutomateTotalSUM.
+
+Copying Content with Excel VBA:
+-Now that we have the loop set up to perform the procedures on each sheet. We want to copy the contents of each sheet and place it in the quarterly report sheet.
+-First we need to select all the data. In the Excel interface, we would select the cell and use the shortcut keys: "CTRL+Shift+Right" and "CTRL+Shift+Down" in order to highlight all the data. But what does this look like in VBA?
+-Well to make this easy, well record a macro of us doing this exact step and it will come up as a sub procedure.
+-Well select cell A2, and perform these operations then stop recording.
+-The VBA Code has 2 lines: 
+	1. Range(Selection, Selection.End(xlDown)).Select
+	2. Range(Selection, Selection.End(xlToRight)).Select
+-These are just using the range that we saw earlier but now we are using the selected cells rather than hardcoding the cell.
+-Well copy these lines into our main procedure. We need one more step and need to select the first cell, which is A2, so above these 2 lines, well add: "Range("A2").Select" just so we have a starting point. 
+-Finally, we have now selected all the data, we just need to copy it. We can use a simple line of code. We have just selected the data, so well use: "Selection.copy" to copy the data.
+
+Pasting Content with Excel VBA:
+-Now that we have selected and copied the data, we want to now paste in the Quarterly report worksheet.
+-Well first select the worksheet using: "Worksheets("YEARLY REPORT").Select".
+-Now when we go to paste it, we cant just paste, because we risk overwriting some data. We need to paste at the first blank cell row.
+-well use: "Range("A100000").Select". This will select a very far down cell. We follow with the line: "Selection.End(xlUp).Select", which makes Excel go all the way up to the nearest cell with data. Doing this with such a big number allows us to paste our data, then when it comes to paste the next set of data, to ensure it doesnt get overlapped.
+-This selects the first cell from down to up with a value, but we want to paste directly below this, so we need to add a line to offset the selection by one row. 
+
+Cleaning up the Final Report VBA Loop Code:
+-In our loop, we loop over all the worksheets in the workbook, but this includes the quarterly report as well. We dont want to perform the actions with the quarterly report sheet tho. 
+-We can set up a condition where if the sheet name is Quarterly report, then we do not do the actions.
+-The next thing we want to do is after the loop ends. When we do the loop, it will format and add headers and do the sum to each of the sheets, but the "Quarterly Report" sheet will only have the raw data with no formatting or headers or sum.
+-We want to perform those actions to this sheet too. So after the line "Next ws", which is after the loop, well select the worksheet and call those procedures.
+-The last thing is to take a look at the procedure for the sum calculation. Recall we added a loop to this procedure to calculate the sum over all worksheets. 
+-Our main procedure is already looping over all the worksheets, so we do not need this loop in the AutomateSum procedure. 
+-Lets comment out the loop lines in this procedure. 
+
+Adding Logic to Stop the Loop from Running Multiple Times on a Worksheet:
+-We need one more tweak to add to the code. This pertains to when we paste our data in. 
+-Observe in the code that when we do the pasting, we select a cell super far down, then tell excel to go from there, Up until it finds some data, then offset and paste there.
+-The problem is the first iteration of the loop. The Quarterly report worksheet is blank on the first iteration, so if we do these steps, select a far down cell and look for data upwards, it will NOT find anything and will automatically goes to A1, then will offset to A2. But we actually want the data to be in A1, NOT A2. 
+-We will create a little flag where the first time it runs, we tell the code not to run the offset command.
+-Well set up a variable: "dim firstTime as Boolean" and well set this equal to True before the loop. We can set up a condition on the offset line that if this is true, dont do it. Then well set up an else which sets it to False.
+
+Running the Final Report Procedure:
+-Everything is all set up. Lets run it and see if it works.
+-All good. Really fast generated the quarterly report!
