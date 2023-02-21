@@ -1,0 +1,87 @@
+Introduction to Project #6:
+-User Forms and how to interact with the user and buttons the user can click. We will add in the previous procedures for example the final report and allow users to click a button and run this procedure. 
+-Were mainly talking about events, like clicking a button, changing values, opening and closing elements, etc.
+-Well run some code so that when a user even opens the workbook.
+
+Creating an Excel User Forms:
+-In the file, we already have all the procedures we previously worked on in the VBA module. 
+-Now, we can build the user form. To do this, well click insert, and click "User Forms". This will make a new folder (the same level as the module folder). Select UserForm1. We have a blank user form looking window and a tool box with features to add to the box.
+-To create a control, find the “Combo Box” item in the Toolbox window. Select this and draw a box in the UserForm1 area. We also want to add a label. Grab this from the toolbox. Finally we want to add two Commandbuttons below. 
+-We have a Userform with a label, drop down and 2 buttons.
+
+Working with Form and Control Properties:
+-Now well manipulate properties that deal with the form it self, including the labels, size, etc.
+-First thing, lets select the form by clicking on it. Notice the properties in the panel on the left. We want to make sure we name everything. Lets rename the Name of our Form. Well use some shortform names, for example Buttons, use BTN, forms, use frm, etc.
+-This name will be how we refer to this form in the code!
+-We can also change the caption of the user form window. Lets write our message in there: “Welcome to the Report Form”. Notice now the user form window, the caption in the top part has been updated.
+-Lets also change the name and caption of the boxes we added. Click on each thing (click on Label and buttons), then in the same property panel (now for the thing we clicked on), change the name and caption. 
+-For the label, well add “lbl” in the name, but the caption can be anything. Well use: “lblWhichSheet” and “Please Select a Worksheet.” respectively.
+-For the Combo box, well use: “cboWhichSheet”. This does not have a caption property. 
+-For the first command button: “btnAddWorksheet” and “Add Worksheet”
+-Second command button: “cmdRunReport” and “Run Report”.
+
+Formatting Excel VBA User Form Controls:
+-Lets deal with formatting now. Size of labels, etc.
+-If you click on the label, you re-size it with the boxes in the corners. You can also move it around.
+-We can also change the font by going to the font property in the panel. 
+
+Adding VBA Code to the Initialize Event:
+-In our form, we have some controls. Lets focus on our combobox, with the dropdown to select the worksheet. We need to populate this with the worksheet names.
+-We have things called “Events” with user forms, which are essentially triggers. Perform a certain action when this happens. 
+-For example, when the form opens, an event called “Initialize” occurs. We want to populate the combo box with the worksheet names during this event.
+-Lets double click on the form window. It has already created a sub procedure for the user form, specificially, for the “Click” event.
+-Lets test this by bringing in a message box in this procedure. Lets run this. Notice when we click the dropdown, nothing happens, but when we click on the actual user form window, we get the message box.
+-Thats good but we want to populate the dropdown. Go back to the procedure for the click on the UserForm. At the top, we see 2 dropdown menus, One says “UserForm” and one says “Click”. Lets go to the click drop down and select “Initialize”. This creates a new sub procedure for the new event.
+-In the initialize event (which is when the workbook is opened), we want to populate the drop down. 
+Well call the userform and the combobox. Then we access its propety AddItem.
+-Well write: “frmReport.cboWhichSheet.AddItem "Hello"”. When we run this, notice now in the dropdown, it says our message.
+-We have a reference to the form, reference to the control and Additem method.
+-This is one technique. We told it the path essentially.
+-A shortcut to write this line and a little more dynamic, we could instead write: “”, since we are already on the userform and talking about that element itself.
+-We got access to the controls and manipulate these controls through Events. In this case, we did it for the initialize event.
+
+Using the AddItem Method within a Loop:
+-Now we want to make a loop to add each sheet name to the combobox.
+-Well again use the line about AddItem, but we want to access the worksheets. To reference the first worksheet and get its name, well write: “Me.cboWhichSheet.AddItem Worksheets(1).Name”. Run this and notice the dropdown said “East Records”. It worked.
+-We want to do this for all other sheets, but what if we have too many worksheets. We can set up a loop to deal with this. Lets use a Do-While loop to do this. We want to set up the iteration index, and well loop over i as long as i is less than or equal to the number of sheets in the workbook. This looks like: “Do While i <= Worksheets.Count”. 
+-In the loop well also update i according to: ”i = i+1”, at the end of the loop (within the loop).
+
+Adding VBA Code to the ComboBox Change Event:
+-Now that we have populated the names, we want to now have Excel navigate to the worksheet that the user chooses.
+-We now want to look at the “Change” Event, for the combo box NOT the userform. In the Userform, double click on the combo box. We now have a new procedure for the combo box and the change event. We can also change the event but this is what we want.
+-To find the value of the combo box, well use: “Worksheets(Me.cboWhichSheet.Value).Select”.
+-This selects the value that they chose in the combo box. This one line will now automatically navigate to that sheet.
+
+Adding VBA Code to the Add Worksheet Button:
+-Now we want to deal with the command button to add a worksheet. Lets now work with this button, so lets double click on this button. We want to work with the event “Click”.
+-We can simply write: “Worksheets.Add”. But this would add an empty sheet to the left of the active sheet. We want to put the new sheets at the start (Left side). 
+-We can add this in the arguments of Add: “Worksheets.Add before:=worksheets(1)”.
+
+Change Worksheet Name:
+-Now we can add a new worksheet, but lets let the user be able to change the name of the new worksheet.
+-In the same procedure for the button click, well prompt the user to change the name.
+-Well write: “activesheet.name = inputbox(Please Name the new Worksheet:")”. 
+-We use Activesheet first, because when we add a sheet, it navigates to the new sheet making it the now active sheet.
+
+Catch Errors When Adding a Worksheet:
+-We are now able to create a new sheet and allow user to name the new sheet, but what happens if the user leaves it blank? We get an error. Same thing if they click cancel. If they now dont want the new sheet and click cancel we want to delete the new sheet as well.
+-We add conditions to the loop to account for errors using the Error Handler.
+
+Additional Conditions on the Loop:
+-If we create a new sheet and it is blank, if we go to run the yearlyreport procedure, it will give errors because the procedure expects data not a blank worksheet.
+-Lets add the call to this procedure in the form. This returns an error. When we debug, we find the error is in the offset line because it didnt find a cell with data, so it could not offset.
+-We need a solution for this using Logic with a condition for if the worksheet is empty. We need to change this in the module, not the userform. So well go to the module and the procedure: LoopYearlyReport.
+-To do this, well use the AND keyword in the line where we check for the sheet name being “YEARLY REPORT”. this looks like: “If ws.Name <> "YEARLY REPORT" And Activesheet.range("A1").Value <> "" Then”. 
+-We just checked the first cell to see if it was empty. We could have checked if it contained the text “Division”, then we’d know it contained the right data.
+
+Running the Final Report Procedure:
+-Now we have all the buttons done. We created the form and all the controls. We are ready to run this.
+-Open up the form, hit the play button and run it. 
+
+Showing the VBA User Form on Workbook Open:
+-Now want to prompt the user with the form right when they open up the workbook. We want to create an event opening the workbook to run the user form.
+-Notice in the project panel, we see a list of all our worksheets, there is also one called “This workbook”. 
+-Well double click that to open it. If we change “General” to “Workbook”, we can select the event as “Open”. So we create a sub procedure for the event of opening the workbook.
+
+
+
