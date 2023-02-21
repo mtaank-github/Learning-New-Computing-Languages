@@ -6,7 +6,7 @@ We started from scratch with a "**Monthly Budget**" spreadsheet. We created a mo
   
 Going through the lectures, some of the main skills I picked up included:
   - Entering and Editing Text and Formulas
-  - Working with Basic Excel Functions including: **SUM()**, **MIN()/MAX()**, **AVERAGE()**, **COUNT()**, and AutoSum.
+  - Working with Basic Excel Functions including: **SUM()**, **MIN()/MAX()**, **AVERAGE()**, **COUNT()**, and **AutoSum**.
   - Modifying and Formatting an Excel Worksheet
   - Creating Charts and Generating SmartArt
   - Printing Excel Worksheets
